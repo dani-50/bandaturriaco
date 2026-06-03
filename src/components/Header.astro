@@ -22,7 +22,7 @@ const langSwitcherPages: Record<string, string> = {
 };
 
 const switchPage = langSwitcherPages[currentPage] ?? 'index';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <header class="site-header">

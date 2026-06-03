@@ -14,13 +14,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         and an exceptional link between Central European culture and the Italian musical tradition.
       </p>
       <div class="hero-buttons">
-        <a href={`${import.meta.env.BASE_URL}/en/societa`} class="btn btn-outline">The Society</a>
-        <a href={`${import.meta.env.BASE_URL}/en/banda`} class="btn btn-outline">The Band</a>
-        <a href={`${import.meta.env.BASE_URL}/en/corsi`} class="btn btn-outline">Our Courses</a>
-        <a href={`${import.meta.env.BASE_URL}/en/eventi`} class="btn btn-outline">Upcoming Events</a>
-        <a href={`${import.meta.env.BASE_URL}/en/storia`} class="btn btn-outline">Our History</a>
-        <a href={`${import.meta.env.BASE_URL}/en/galleria`} class="btn btn-outline">Gallery</a>
-        <a href={`${import.meta.env.BASE_URL}/en/contatti`} class="btn btn-outline">Contact</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/societa`} class="btn btn-outline">The Society</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/banda`} class="btn btn-outline">The Band</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/corsi`} class="btn btn-outline">Our Courses</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/eventi`} class="btn btn-outline">Upcoming Events</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/storia`} class="btn btn-outline">Our History</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/galleria`} class="btn btn-outline">Gallery</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/en/contatti`} class="btn btn-outline">Contact</a>
       </div>
     </div>
     <div class="decorative">𝄞</div>

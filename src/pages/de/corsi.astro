@@ -93,7 +93,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
       <div style="text-align: center; margin-top: 40px;">
         <p style="font-size: 18px; margin-bottom: 20px;">Für Informationen und Anmeldungen:</p>
-        <a href={`${import.meta.env.BASE_URL}/de/contatti`} class="btn btn-primary">Kontakt aufnehmen</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/de/contatti`} class="btn btn-primary">Kontakt aufnehmen</a>
       </div>
     </div>
   </section>
