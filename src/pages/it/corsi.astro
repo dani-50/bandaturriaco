@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Corsi Musicali — Società Filarmonica di Turriaco" lang="it" currentPage="corsi">
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Corsi Musicali</h1>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container prose" style="text-align: center;">
+      <p style="font-size: 19px; max-width: 700px; margin: 0 auto 20px;">
+        Per garantire la continuità della propria attività e offrire la possibilità,
+        a chi lo desideri, di iniziare o approfondire lo studio di uno strumento musicale,
+        la Società Filarmonica ha da anni istituito dei <strong>corsi musicali</strong>.
+      </p>
+      <p style="max-width: 700px; margin: 0 auto;">
+        Gli allievi vengono seguiti nella preparazione da insegnanti qualificati.
+        La Società ha inoltre avviato una collaborazione con le <strong>Scuole dell'Infanzia
+        ed Elementare di Turriaco</strong>, per permettere anche ai più piccoli di avvicinarsi
+        al mondo della musica.
+      </p>
+    </div>
+  </section>
+
+  <!-- Corsi -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>I Nostri Corsi</h2>
+        <p>Da ottobre a maggio, seguendo il calendario scolastico</p>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-icon">🎵</div>
+          <h3>Propedeutica Musicale</h3>
+          <p>Corso introduttivo per bambini dai 5 anni. Primo approccio alla musica attraverso il gioco, il ritmo e il canto. Ideale per scoprire le proprie attitudini musicali.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">🎺</div>
+          <h3>Ottoni</h3>
+          <p>Corsi individuali e di gruppo per tromba, corno, trombone, flicorno, euphonium e tuba. Per principianti e livello intermedio.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">🎷</div>
+          <h3>Legni</h3>
+          <p>Corsi per flauto traverso, clarinetto, oboe, fagotto e sassofono. Lezioni individuali con insegnanti diplomati al conservatorio.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">🥁</div>
+          <h3>Percussioni</h3>
+          <p>Batteria, timpani, xilofono e strumenti a percussione. Studio della tecnica e del repertorio bandistico.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">📖</div>
+          <h3>Teoria e Solfeggio</h3>
+          <p>Corso complementare di teoria musicale, lettura dello spartito e solfeggio per tutti gli allievi strumentisti.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">🎶</div>
+          <h3>Musica d'Insieme</h3>
+          <p>Pratica di ensemble e preparazione all'inserimento nella banda. Per allievi che hanno raggiunto un livello sufficiente sul proprio strumento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informazioni Pratiche -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Informazioni Pratiche</h2>
+      </div>
+      <div class="cards-grid" style="max-width: 900px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h3 style="color: var(--color-secondary); margin-bottom: 16px;">📅 Periodo</h3>
+            <p><strong>Ottobre – Maggio</strong><br />Seguendo il calendario scolastico</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h3 style="color: var(--color-secondary); margin-bottom: 16px;">👥 Destinatari</h3>
+            <p><strong>Aperto a tutti</strong><br />Bambini, ragazzi e adulti, principianti e non</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h3 style="color: var(--color-secondary); margin-bottom: 16px;">📍 Sede</h3>
+            <p><strong>Sedi della Società</strong><br />Turriaco (GO)</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="font-size: 18px; margin-bottom: 20px;">Per informazioni e iscrizioni:</p>
+        <a href="/it/contatti" class="btn btn-primary">Contattaci</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import type { Lang } from '../i18n/translations';
+import { ui } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const nav = t.nav;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>{t.footer.aboutTitle}</h3>
+        <p>{t.footer.aboutText}</p>
+      </div>
+      <div class="footer-links">
+        <h3>{t.footer.navTitle}</h3>
+        <ul>
+          <li><a href={`/${lang}/societa`}>{nav.societa}</a></li>
+          <li><a href={`/${lang}/banda`}>{nav.banda}</a></li>
+          <li><a href={`/${lang}/corsi`}>{nav.corsi}</a></li>
+          <li><a href={`/${lang}/eventi`}>{nav.eventi}</a></li>
+          <li><a href={`/${lang}/storia`}>{nav.storia}</a></li>
+          <li><a href={`/${lang}/galleria`}>{nav.galleria}</a></li>
+          <li><a href={`/${lang}/contatti`}>{nav.contatti}</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>{t.footer.followTitle}</h3>
+        <div class="social-icons">
+          <a href="#" class="social-icon" title="Facebook">f</a>
+          <a href="#" class="social-icon" title="Instagram">ig</a>
+          <a href="#" class="social-icon" title="YouTube">▶</a>
+        </div>
+        <p style="margin-top: 16px; font-size: 14px;" set:html={t.footer.address} />
+      </div>
+    </div>
+    <div class="footer-bottom">
+      {t.footer.copyright} |
+      <a href="#">{t.footer.privacy}</a> |
+      {t.footer.affil} <a href="https://www.anbimafvg.it" target="_blank" rel="noopener">ANBIMA FVG</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Kontakt — Società Filarmonica di Turriaco" lang="de" currentPage="contatti">
+  <div class="page-header">
+    <div class="container">
+      <h1>Kontakt</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="section-header" style="text-align: left;">
+            <h2>Schreiben Sie uns oder besuchen Sie uns</h2>
+            <p>Für Informationen zu Veranstaltungen, Kursen und Kooperationen</p>
+          </div>
+          <ul class="contact-info-list">
+            <li>
+              <div class="icon">📍</div>
+              <div>
+                <h4>Adresse</h4>
+                <p>Società Filarmonica di Turriaco<br />34070 Turriaco (GO)<br />Friaul-Julisch Venetien, Italien</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon">✉</div>
+              <div>
+                <h4>E-Mail</h4>
+                <p>info@filarmonicaturriaco.it</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon">📱</div>
+              <div>
+                <h4>Telefon</h4>
+                <p>+39 0481 XXX XXX</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon">f</div>
+              <div>
+                <h4>Facebook</h4>
+                <p>Società Filarmonica di Turriaco</p>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top: 32px;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">Vorstand</h3>
+            <p><strong>Vorsitzender:</strong> Andrea Baldo</p>
+            <p><strong>Dirigent:</strong> M° Fulvio Dose</p>
+          </div>
+          <div style="margin-top: 32px;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">Proben</h3>
+            <p>Die Proben der Kapelle finden wöchentlich im Vereinshaus statt. Für Informationen zu Tagen und Uhrzeiten kontaktieren Sie uns bitte.</p>
+          </div>
+        </div>
+        <div>
+          <div class="map-placeholder">
+            <iframe
+              src="https://www.google.com/maps?q=Turriaco,+GO&z=13&hl=de&output=embed"
+              title="Interaktive Karte von Turriaco"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div style="margin-top: 32px; padding: 24px; background: var(--color-bg-alt); border-radius: 8px; border: 1px solid var(--color-border);">
+            <h3 style="font-size: 20px; margin-bottom: 16px; text-align: center;">Mitgliedschaften</h3>
+            <div style="text-align: center;">
+              <p style="font-size: 15px; color: var(--color-text-light); margin-bottom: 12px;">
+                Die Società Filarmonica di Turriaco ist Mitglied von:
+              </p>
+              <p style="font-weight: 700; color: var(--color-primary);">ANBIMA FVG</p>
+              <p style="font-size: 14px; color: var(--color-text-light);">
+                Associazione Nazionale Bande Italiane<br />Musicali Autonome — Friuli Venezia Giulia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

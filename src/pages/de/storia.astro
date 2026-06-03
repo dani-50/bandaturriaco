@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ui } from '../../i18n/translations';
+
+const lang = 'de';
+const t = ui[lang];
+const chapters = t.storiaChapters;
+
+const chapterFiles = await Astro.glob('../../content/storia-de/*.md');
+chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
+---
+
+<BaseLayout title="Geschichte — Società Filarmonica di Turriaco" lang="de" currentPage="storia">
+  <Fragment slot="head">
+    <style>
+      .chapter-toc {
+        background: var(--color-bg-alt, #f5f0e8);
+        border-top: 3px solid var(--color-secondary, #8b6f47);
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+        position: sticky;
+        top: var(--header-height, 80px);
+        z-index: 50;
+      }
+      .chapter-toc .toc-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .chapter-toc .toc-label {
+        font-family: var(--font-display, 'Playfair Display', serif);
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--color-text-light, #888);
+        width: 100%;
+        margin-bottom: 4px;
+      }
+      .chapter-toc a {
+        display: inline-block;
+        padding: 7px 16px;
+        border: 1.5px solid var(--color-secondary, #8b6f47);
+        border-radius: 3px;
+        color: var(--color-primary, #2c1810);
+        text-decoration: none;
+        font-size: 14px;
+        font-family: var(--font-body, 'Lora', serif);
+        transition: none;
+      }
+      .chapter-toc a:hover {
+        background: var(--color-secondary, #8b6f47);
+        color: #fff;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+      .chapter-toc a.toc-active {
+        background: var(--color-secondary, #8b6f47);
+        color: #fff;
+      }
+      .chapter-section {
+        scroll-margin-top: 160px;
+        padding: 60px 0;
+        border-bottom: 2px solid var(--color-bg-alt, #f5f0e8);
+      }
+      .chapter-section:nth-child(even) { background: var(--color-bg-alt, #f5f0e8); }
+      .chapter-header-block {
+        max-width: 860px;
+        margin: 0 auto 40px;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .chapter-number-badge {
+        display: inline-block;
+        font-family: var(--font-display, 'Playfair Display', serif);
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--color-secondary, #8b6f47);
+        border: 1px solid var(--color-secondary, #8b6f47);
+        padding: 4px 14px;
+        margin-bottom: 16px;
+      }
+      .chapter-header-block h2 { font-size: 32px; margin-bottom: 0; }
+      .chapter-content {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-family: var(--font-body, 'Lora', serif);
+        line-height: 1.85;
+        font-size: 17px;
+        color: var(--color-text, #2c1810);
+      }
+      .chapter-content :global(h1) { display: none; }
+      .chapter-content :global(h2) {
+        font-family: var(--font-display, 'Playfair Display', serif);
+        font-size: 24px;
+        margin: 48px 0 20px;
+        color: var(--color-primary, #2c1810);
+        border-bottom: 1px solid var(--color-secondary, #8b6f47);
+        padding-bottom: 8px;
+      }
+      .chapter-content :global(h3) {
+        font-family: var(--font-display, 'Playfair Display', serif);
+        font-size: 20px;
+        margin: 36px 0 14px;
+        color: var(--color-primary, #2c1810);
+      }
+      .chapter-content :global(h4) { font-size: 17px; font-style: italic; margin: 28px 0 10px; }
+      .chapter-content :global(p) { margin: 0 0 1.3em; }
+      .chapter-content :global(blockquote) {
+        margin: 28px 0;
+        padding: 20px 28px;
+        background: #fff;
+        border-left: 4px solid var(--color-secondary, #8b6f47);
+        font-style: italic;
+        color: var(--color-text-light, #555);
+      }
+      .chapter-content :global(blockquote p:last-child) { margin-bottom: 0; }
+      .chapter-content :global(img) { max-width: 100%; height: auto; display: block; margin: 28px auto; }
+      .chapter-content :global(figure) { margin: 28px 0; text-align: center; }
+      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; }
+      .chapter-content :global(strong) { color: var(--color-primary, #2c1810); }
+      .chapter-content :global(ul), .chapter-content :global(ol) { margin: 0 0 1.3em 1.5em; }
+      .chapter-content :global(li) { margin-bottom: 0.4em; }
+      .chapter-nav-bottom {
+        max-width: 860px;
+        margin: 40px auto 0;
+        padding: 24px 20px 0;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-family: var(--font-body, 'Lora', serif);
+      }
+      .chapter-nav-bottom a { color: var(--color-secondary, #8b6f47); text-decoration: none; }
+      .chapter-nav-bottom a:hover { text-decoration: underline; }
+      @media (max-width: 600px) {
+        .chapter-toc .toc-inner { flex-direction: column; }
+        .chapter-content { font-size: 16px; }
+        .chapter-header-block h2 { font-size: 24px; }
+      }
+    </style>
+  </Fragment>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Unsere Geschichte</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <p style="font-size: 19px; font-style: italic; color: var(--color-text-light); text-align: center; margin-bottom: 40px;">
+        „Die einzige Blaskapelle in der Provinz Görz, die ihre Tätigkeit
+        ununterbrochen über 150 Jahre hinweg, verteilt auf drei verschiedene Jahrhunderte,
+        ausgeübt hat &mdash; eines der traditionsreichsten Blasorchester
+        der gesamten Region Friaul-Julisch Venetien."
+      </p>
+      <p>
+        Die Società Filarmonica di Turriaco wurde <strong>1870</strong> auf Initiative
+        einer kleinen Gruppe lokaler Enthusiasten gegründet. Als Zeuge der historischen Entwicklung,
+        die das Isonzo-Gebiet von habsburgischem Territorium zu einem integralen Bestandteil
+        des italienischen Staates machte, stellt das Ensemble eine außergewöhnliche Verbindung
+        zwischen den neuesten musikalischen Strömungen und den Rhythmen und Klängen der
+        mitteleuropäischen Kultur dar.
+      </p>
+      <p>
+        Die Kapelle machte ihre ersten Schritte unter der Leitung von Kapellmeister
+        <strong>Guglielmo Schubert</strong>; nach wechselvollen Ereignissen, darunter eine interne Spaltung,
+        die Anfang des 20. Jahrhunderts zur Koexistenz zweier Musikgruppen führte,
+        fand sie <strong>1920</strong> ihre endgültige Form und behielt den Namen
+        „Società Filarmonica di Turriaco" bei.
+      </p>
+      <p>
+        Derzeit besteht das Musikensemble aus rund vierzig aktiven Mitgliedern,
+        darunter Amateure und Konservatoriumsabsolventen. Unabhängig in der organisatorischen
+        und administrativen Führung, wird die Gesellschaft von einem Vorstand geleitet,
+        der von der Mitgliederversammlung gewählt wird.
+      </p>
+    </div>
+  </section>
+
+  <nav class="chapter-toc" aria-label="Kapitelnavigation">
+    <div class="toc-inner">
+      <span class="toc-label">{t.storiaTocLabel}</span>
+      {chapters.map((ch, i) => (
+        <a href={`#${ch.id}`}>{i + 1} &mdash; {ch.title}</a>
+      ))}
+    </div>
+  </nav>
+
+  {chapterFiles.map((chapter, i) => {
+    const ch = chapters[i];
+    const prevCh = i > 0 ? chapters[i - 1] : null;
+    const nextCh = i < chapters.length - 1 ? chapters[i + 1] : null;
+    const Content = chapter.Content;
+    return (
+      <section class="chapter-section" id={ch.id}>
+        <div class="chapter-header-block">
+          <span class="chapter-number-badge">{ch.label}</span>
+          <h2>{ch.title}</h2>
+        </div>
+        <div class="chapter-content">
+          <Content />
+        </div>
+        <nav class="chapter-nav-bottom">
+          {prevCh ? <a href={`#${prevCh.id}`}>&larr; {prevCh.label}</a> : <span></span>}
+          {nextCh
+            ? <a href={`#${nextCh.id}`}>{nextCh.label} &rarr;</a>
+            : <a href="#" style="color:var(--color-text-light)">{t.storiaNavEnd}</a>}
+        </nav>
+      </section>
+    );
+  })}
+
+  <script>
+    const sections = document.querySelectorAll<HTMLElement>('.chapter-section');
+    const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.chapter-toc a');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach((link) => {
+              link.classList.toggle('toc-active', link.getAttribute('href') === `#${entry.target.id}`);
+            });
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -75% 0px' }
+    );
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</BaseLayout>
