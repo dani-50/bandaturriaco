@@ -23,19 +23,20 @@ const langSwitcherPages: Record<string, string> = {
 
 const switchPage = langSwitcherPages[currentPage] ?? 'index';
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const switchPath = (l: string) => switchPage === 'index' ? `${base}/${l}` : `${base}/${l}/${switchPage}`;
 ---
 
 <header class="site-header">
   <div class="header-top">
     <span class="header-top-text">{t.tagline.toUpperCase()}</span>
     <div class="lang-switcher">
-      <a href={`${base}/it/${switchPage}`} class:list={[{ active: lang === 'it' }]}>IT</a>
-      <a href={`${base}/en/${switchPage}`} class:list={[{ active: lang === 'en' }]}>EN</a>
-      <a href={`${base}/de/${switchPage}`} class:list={[{ active: lang === 'de' }]}>DE</a>
+      <a href={switchPath('it')} class:list={[{ active: lang === 'it' }]}>IT</a>
+      <a href={switchPath('en')} class:list={[{ active: lang === 'en' }]}>EN</a>
+      <a href={switchPath('de')} class:list={[{ active: lang === 'de' }]}>DE</a>
     </div>
   </div>
   <div class="header-main">
-    <a href={`${base}/${lang}/index`} class="site-logo">
+    <a href={`${base}/${lang}`} class="site-logo">
       <div class="logo-icon">
         <img
           src={`${base}/asset/images/logo_senza_scritta_gold_bg.png`}
