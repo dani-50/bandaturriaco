@@ -22,22 +22,23 @@ const langSwitcherPages: Record<string, string> = {
 };
 
 const switchPage = langSwitcherPages[currentPage] ?? 'index';
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="site-header">
   <div class="header-top">
     <span class="header-top-text">{t.tagline.toUpperCase()}</span>
     <div class="lang-switcher">
-      <a href={`/it/${switchPage}`} class:list={[{ active: lang === 'it' }]}>IT</a>
-      <a href={`/en/${switchPage}`} class:list={[{ active: lang === 'en' }]}>EN</a>
-      <a href={`/de/${switchPage}`} class:list={[{ active: lang === 'de' }]}>DE</a>
+      <a href={`${base}it/${switchPage}`} class:list={[{ active: lang === 'it' }]}>IT</a>
+      <a href={`${base}en/${switchPage}`} class:list={[{ active: lang === 'en' }]}>EN</a>
+      <a href={`${base}de/${switchPage}`} class:list={[{ active: lang === 'de' }]}>DE</a>
     </div>
   </div>
   <div class="header-main">
-    <a href={`/${lang}/index`} class="site-logo">
+    <a href={`${base}${lang}/index`} class="site-logo">
       <div class="logo-icon">
         <img
-          src="/asset/images/logo_senza_scritta_gold_bg.png"
+          src={`${base}asset/images/logo_senza_scritta_gold_bg.png`}
           alt={t.logoAlt}
         />
       </div>
@@ -58,43 +59,43 @@ const switchPage = langSwitcherPages[currentPage] ?? 'index';
         <ul>
           <li>
             <a
-              href={`/${lang}/societa`}
+              href={`${base}${lang}/societa`}
               class:list={[{ active: currentPage === 'societa' }]}
             >{t.nav.societa}</a>
           </li>
           <li>
             <a
-              href={`/${lang}/banda`}
+              href={`${base}${lang}/banda`}
               class:list={[{ active: currentPage === 'banda' }]}
             >{t.nav.banda}</a>
           </li>
           <li>
             <a
-              href={`/${lang}/corsi`}
+              href={`${base}${lang}/corsi`}
               class:list={[{ active: currentPage === 'corsi' }]}
             >{t.nav.corsi}</a>
           </li>
           <li>
             <a
-              href={`/${lang}/eventi`}
+              href={`${base}${lang}/eventi`}
               class:list={[{ active: currentPage === 'eventi' }]}
             >{t.nav.eventi}</a>
           </li>
           <li>
             <a
-              href={`/${lang}/storia`}
+              href={`${base}${lang}/storia`}
               class:list={[{ active: currentPage === 'storia' }]}
             >{t.nav.storia}</a>
           </li>
           <li>
             <a
-              href={`/${lang}/galleria`}
+              href={`${base}${lang}/galleria`}
               class:list={[{ active: currentPage === 'galleria' }]}
             >{t.nav.galleria}</a>
           </li>
           <li>
             <a
-              href={`/${lang}/contatti`}
+              href={`${base}${lang}/contatti`}
               class:list={[{ active: currentPage === 'contatti' }]}
             >{t.nav.contatti}</a>
           </li>
