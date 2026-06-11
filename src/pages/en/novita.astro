@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { execSync } from 'child_process';
+
+let lastCommitDate = '';
+try {
+  lastCommitDate = execSync('git log -1 --date=format:"%d/%m/%Y" --format="%ad"').toString().trim();
+} catch {
+  lastCommitDate = '';
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="News — Società Filarmonica di Turriaco" lang="en" currentPage="novita">
+  <div class="page-header">
+    <div class="container">
+      <h1>News</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+
+      <p class="last-updated">
+        <em>Page last updated on <strong>{lastCommitDate}</strong></em>
+      </p>
+
+      <p>
+        On Saturday, June 13, at 8:30 PM, in the spaces adjacent to the municipal hall (in case of bad weather: at the PalaMarson),
+        the band of the Società Filarmonica di Turriaco will be the protagonist of a charity concert in support of the association
+        La Melagrana, a social cooperative that, through initiatives such as the recently opened restaurant-pizzeria &ldquo;AUTstanding&rdquo;
+        in Monfalcone, aims to restore dignity, autonomy and employment opportunities to people with an autism spectrum diagnosis.
+      </p>
+
+      <p>
+        Saturday’s concert stems from the commitment that the Filarmonica di Turriaco has been carrying out for years towards
+        the local community, seeing music not only as artistic expression but as an instrument of social cohesion and civic responsibility.
+      </p>
+
+      <p>
+        For the evening, the Turriaco ensemble, conducted by maestro Fulvio Dose, will be joined &mdash; in a long-standing
+        collaboration &mdash; by the Tita Michelas band from Fiumicello, whose maestro Gabriele Zimolo will alternate with
+        m. Dose in conducting the pieces on the programme.
+      </p>
+
+      <p>
+        The evening’s repertoire will be entirely dedicated to British music, ranging from traditional island folk tunes to
+        classical pieces and pop music arrangements.
+      </p>
+
+      <p>
+        The event is part of the eighteenth edition of <em>Note di Costituzione</em>, the festival that since April 10 has
+        animated the area with a rich calendar of events involving local associations, and will be the occasion for the
+        presentation of the new website with which the Società Filarmonica showcases its activities and history.
+      </p>
+
+      <p>
+        Admission is by free donation. The community is invited to attend and make a concrete contribution to those who believe
+        that inclusion through work is the truest path to autonomy and self-respect.
+      </p>
+
+      <figure class="news-figure">
+        <img
+          src={`${base}/asset/images/fotoprove1.jpg`}
+          alt="Rehearsals for the concert on Saturday, June 13"
+          style="max-width: 100%; border-radius: 8px;"
+        />
+        <figcaption>Rehearsals for the concert on Saturday, June 13</figcaption>
+      </figure>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .last-updated {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #888);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+    padding-bottom: 0.75rem;
+  }
+  .news-figure {
+    margin: 2.5rem 0 0;
+    text-align: center;
+  }
+  .news-figure figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-text-muted, #888);
+    text-align: center;
+  }
+</style>

@@ -2,25 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Music Courses — Società Filarmonica di Turriaco" lang="en" currentPage="corsi">
+<BaseLayout title="Our Music Courses — Società Filarmonica di Turriaco" lang="en" currentPage="corsi">
   <div class="page-header">
     <div class="container">
-      <h1>Music Courses</h1>
+      <h1>Our Music Courses</h1>
     </div>
   </div>
 
   <section class="section">
-    <div class="container prose" style="text-align: center;">
-      <p style="font-size: 19px; max-width: 700px; margin: 0 auto 20px;">
-        To ensure the continuity of its activities and offer the opportunity
-        to those who wish to begin or deepen the study of a musical instrument,
-        the Società Filarmonica has for years organised <strong>music courses</strong>.
+    <div class="container prose">
+      <p>
+        To ensure the continuity of its activities and offer the opportunity — to those who wish — to begin or deepen the study of a musical instrument, the Società Filarmonica established its own <strong>Music School</strong> in 1983.
       </p>
-      <p style="max-width: 700px; margin: 0 auto;">
-        Students are guided in their preparation by qualified teachers.
-        The Society has also established a collaboration with the <strong>Kindergarten
-        and Primary School of Turriaco</strong>, to allow even the youngest children to
-        approach the world of music.
+      <p>
+        The Society has also long maintained a collaboration with the primary schools of Turriaco and San Pier d'Isonzo&mdash;funded through the <em>Banda#Scuola</em> grant from the Friuli Venezia Giulia Region via ANBIMA regionale&mdash;to introduce the youngest children to the world of music.
       </p>
     </div>
   </section>
@@ -28,8 +23,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="section section--alt">
     <div class="container">
       <div class="section-header">
-        <h2>Our Courses</h2>
-        <p>From October to May, following the school calendar</p>
+        <h2>Courses Offered</h2>
       </div>
       <div class="courses-grid">
         <div class="course-card">
@@ -40,12 +34,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="course-card">
           <div class="course-icon">🎺</div>
           <h3>Brass</h3>
-          <p>Individual and group courses for trumpet, French horn, trombone, flugelhorn, euphonium, and tuba. For beginners and intermediate level.</p>
+          <p>Courses for trumpet, French horn, trombone, flugelhorn, euphonium and tuba.</p>
         </div>
         <div class="course-card">
           <div class="course-icon">🎷</div>
           <h3>Woodwinds</h3>
-          <p>Courses for flute, clarinet, oboe, bassoon, and saxophone. Individual lessons with conservatory-graduated teachers.</p>
+          <p>Courses for flute, clarinet, and saxophone. The most popular ones.</p>
         </div>
         <div class="course-card">
           <div class="course-icon">🥁</div>
@@ -61,6 +55,42 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <div class="course-icon">🎶</div>
           <h3>Ensemble Playing</h3>
           <p>Ensemble practice and preparation for joining the band. For students who have reached a sufficient level on their instrument.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Teachers -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Teachers</h2>
+        <p>Click on a name to view the curriculum</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 16px;">
+        <div style="text-align: center; width: 160px;">
+          <img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/asset/images/tondo_valeria.jpg`} alt="Valeria Bortot" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+          <a href="#" title="Curriculum — Valeria Bortot" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Valeria Bortot</a>
+        </div>
+        <div style="text-align: center; width: 160px;">
+          <img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/asset/images/tondo_colombo.jpg`} alt="Marco Colombo" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+          <a href="#" title="Curriculum — Marco Colombo" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Marco Colombo</a>
+        </div>
+        <div style="text-align: center; width: 160px;">
+          <img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/asset/images/tondo_diego.jpeg`} alt="Diego Donda" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+          <a href="#" title="Curriculum — Diego Donda" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Diego Donda</a>
+        </div>
+        <div style="text-align: center; width: 160px;">
+          <img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/asset/images/tondo_furlan.jpg`} alt="Daniele Furlan" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+          <a href="#" title="Curriculum — Daniele Furlan" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Daniele Furlan</a>
+        </div>
+        <div style="text-align: center; width: 160px;">
+          <img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/asset/images/tondo_stefano.jpg`} alt="Stefano Trentin" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+          <a href="#" title="Curriculum — Stefano Trentin" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Stefano Trentin</a>
+        </div>
+        <div style="text-align: center; width: 160px;">
+          <img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/asset/images/tondo_zimolo.jpg`} alt="Gabriele Zimolo" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+          <a href="#" title="Curriculum — Gabriele Zimolo" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Gabriele Zimolo</a>
         </div>
       </div>
     </div>
@@ -82,12 +112,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <div class="card-body" style="text-align: center;">
             <h3 style="color: var(--color-secondary); margin-bottom: 16px;">👥 Participants</h3>
             <p><strong>Open to all</strong><br />Children, teenagers, and adults, beginners and beyond</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body" style="text-align: center;">
-            <h3 style="color: var(--color-secondary); margin-bottom: 16px;">📍 Venue</h3>
-            <p><strong>Society's premises</strong><br />Turriaco (GO)</p>
           </div>
         </div>
       </div>

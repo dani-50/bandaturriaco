@@ -22,8 +22,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <div class="footer-links">
         <h3>{t.footer.navTitle}</h3>
         <ul>
-          <li><a href={`${base}/${lang}/societa`}>{nav.societa}</a></li>
-          <li><a href={`${base}/${lang}/banda`}>{nav.banda}</a></li>
+          <li><a href={`${base}/${lang}/novita`}>{nav.novita}</a></li>
+          <li><a href={`${base}/${lang}/chisiamo`}>{nav.chisiamo}</a></li>
           <li><a href={`${base}/${lang}/corsi`}>{nav.corsi}</a></li>
           <li><a href={`${base}/${lang}/eventi`}>{nav.eventi}</a></li>
           <li><a href={`${base}/${lang}/storia`}>{nav.storia}</a></li>
@@ -34,16 +34,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <div class="footer-social">
         <h3>{t.footer.followTitle}</h3>
         <div class="social-icons">
-          <a href="#" class="social-icon" title="Facebook">f</a>
-          <a href="#" class="social-icon" title="Instagram">ig</a>
-          <a href="#" class="social-icon" title="YouTube">▶</a>
+          <a href="https://www.facebook.com/share/1M4RMWF39N/?mibextid=wwXIfr" class="social-icon" title="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://www.instagram.com/filarmonicaturriaco1870?igsh=Z3RkcnMzbTg1Y3M2" class="social-icon" title="Instagram" target="_blank" rel="noopener">ig</a>
         </div>
-        <p style="margin-top: 16px; font-size: 14px;" set:html={t.footer.address} />
       </div>
     </div>
     <div class="footer-bottom">
       {t.footer.copyright} |
-      <a href="#">{t.footer.privacy}</a> |
+      <a href={`${base}/${lang}/privacy`}>{t.footer.privacy}</a> |
       {t.footer.affil} <a href="https://www.anbimafvg.it" target="_blank" rel="noopener">ANBIMA FVG</a>
     </div>
   </div>

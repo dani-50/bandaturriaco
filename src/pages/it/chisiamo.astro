@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Chi Siamo — Società Filarmonica di Turriaco" lang="it" currentPage="chisiamo">
+  <div class="page-header">
+    <div class="container">
+      <h1>Chi Siamo</h1>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container prose">
+      <p class="intro-quote">
+        <em>Unica banda della provincia di Gorizia ad aver portato avanti ininterrottamente la propria attività nel corso di tre secoli, è uno dei complessi più ricchi di storia dell'intero Friuli Venezia Giulia.</em>
+      </p>
+
+      <p>La prima &ldquo;banda di Turriaco&rdquo; venne fondata nel 1870, per iniziativa di un piccolo gruppo di appassionati del luogo.</p>
+
+      <p>Mossi i primi passi sotto la direzione del maestro Guglielmo Szubert, si è costituita formalmente come &ldquo;Società Filarmonica di Turriaco&rdquo; nel dicembre 1900. Dopo varie vicissitudini, tra cui una scissione interna che portò, agli inizi del secolo, alla coesistenza di due distinti gruppi bandistici, ha trovato il suo assetto definitivo nel 1920 mantenendolo sino a marzo del 2017 quando, con decisione unanime dell'assemblea dei soci, si è stata trasformata in una Associazione di Promozione Sociale (APS).</p>
+
+      <p>Testimone dell'evoluzione storica che ha trasformato le terre isontine da territorio asburgico a parte integrante dello stato italiano, il complesso rappresenta un eccezionale <em>trait d'union</em> fra le più recenti tendenze musicali e i ritmi e le sonorità della cultura mitteleuropea.</p>
+
+      <p>Attualmente il complesso musicale è composto da una trentina di soci effettivi cui si aggregano, a seconda delle occasioni, altri amici desiderosi di fare di volta in volta musica assieme a noi.</p>
+
+      <p>Autonoma nella gestione organizzativa e amministrativa, la Società è guidata da un consiglio direttivo eletto dall'assemblea dei soci.</p>
+
+      <figure style="margin: 40px 0; text-align: center;">
+        <img
+          src={`${base}/asset/images/fotobanda.jpg`}
+          alt="Foto di gruppo — Società Filarmonica di Turriaco"
+          style="max-width: 100%; height: auto; border-radius: 4px;"
+        />
+        <figcaption style="text-align: center; font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 8px;">La banda di Turriaco al Concerto di Natale 2025</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Consiglio Direttivo -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Il Consiglio Direttivo</h2>
+      </div>
+      <ul class="board-list">
+        <li><strong>Andrea Baldo</strong> — Presidente</li>
+        <li><strong>Susanna Bertogna</strong> — Vicepresidente</li>
+        <li>Sofia Bazzara</li>
+        <li>Marco Cerni</li>
+        <li>Danilo Fum</li>
+        <li>Eva Moschioni</li>
+        <li>Franco Nocent</li>
+        <li>Sergio Passon</li>
+        <li>Michele Poclen</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Il Maestro -->
+  <section class="section section--alt">
+    <div class="container prose">
+      <div class="section-header">
+      <h2>Il Maestro</h2>
+      </div>
+      <p>La Società Filarmonica è attualmente diretta dal Maestro <strong>Fulvio Dose</strong>, che guida il complesso bandistico con passione e competenza, mantenendo vivo il legame con la tradizione e promuovendo al contempo l'innovazione nel repertorio.</p>
+
+      <div style="display: flex; justify-content: center; margin: 32px 0 24px;">
+        <img
+          src={`${base}/asset/images/fotodose.png`}
+          alt="Maestro Fulvio Dose"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+
+      <h3>Fulvio Dose</h3>
+      <p>Nato a Gorizia nel 1968, ha ottenuto il diploma di clarinetto presso il Conservatorio Statale di Musica <em>G. Tartini</em> di Trieste sotto la guida del prof. Davide Teodoro, intraprendendo quindi lo studio dell'armonia e della strumentazione per banda con il maestro Pino Vatta.</p>
+      <p>Ha collaborato con formazioni cameristiche e orchestrali tra le quali l'<em>Orchestra da Camera</em> del FVG, l'<em>Alpe Adria Consort</em> e l'Accademia Regionale <em>Serenade Ensemble</em>, registrando musiche del Novecento edite dalla casa discografica <em>Ars Nova</em>.</p>
+      <p>Ha partecipato a masterclass di perfezionamento con G. Garbarino, G. Brezigar, R. Guiot e A. Carbonare. Ha frequentato corsi e masterclass di direzione con i maestri D. Carnevali, J. Van der Roost, D. Bostock, H. Mertens, F. Ferran. Ha avuto il piacere di collaborare con solisti di fama internazionale quali G. Cassone, M. Pierobon, F.P. Tedesco, M. Miani, M. Maur, F. Paoletti, nonché con il festival <em>MID Europe</em> di Schladming e gli <em>Innsbrucker Promenadenkonzerte</em> (A), e l'<em>Upol Orkesterkamp</em> (SLO).</p>
+      <p>Ha stabilmente diretto la Filarmonica di Colloredo di Prato, la Civica Orchestra Fiati <em>G. Verdi</em> di Trieste, la banda della Società Filarmonica <em>G. Verdi</em> di Ronchi dei Legionari (GO); ha collaborato con la Fondazione Teatro Lirico <em>G. Verdi</em> di Trieste in qualità di maestro della banda negli allestimenti di opere liriche.</p>
+      <p>È stato direttore ospite della Belluno Wind Band, della Nuova Banda Comunale <em>Santa Cecilia</em> di Precenicco, della banda provinciale ANBIMA di Gorizia, della banda giovanile <em>Upol Orkesterkamp</em> di Portorose (SLO).</p>
+      <p>Ha fondato l'Associazione Culturale Musicale <em>Val d'Isonzo</em> della quale è tuttora presidente e direttore artistico. Dirige dal 2011 il Corpo Bandistico Comunale <em>G. Rossini</em> di Castions di Strada (UD).</p>
+      <p>È direttore artistico del concorso musicale internazionale MusiCup — bande giovanili in concorso, organizzato dal Corpo bandistico comunale <em>G. Rossini</em> di Castions di Strada. Numerosi sono i riconoscimenti ottenuti ai concorsi musicali internazionali, sia con formazioni giovanili sia con bande di categoria (dalla terza categoria all'eccellenza).</p>
+      <p>Con le bande da lui dirette ha partecipato negli anni al concorso internazionale di Bertiolo, al <em>Flicorno d'oro</em> di Riva del Garda, al concorso di Bosel (Germania), alla <em>Bacchetta d'oro</em> di Fiuggi, al concorso bande giovanili di Talamona (SO), al <em>Giovani in concorso</em> di Costa Volpino (BG), al concorso per bande giovanili a Corno di Rosazzo, ottenendo ottimi risultati, e in molte occasioni ha ricevuto il riconoscimento come miglior direttore.</p>
+    </div>
+  </section>
+
+  <!-- I Componenti -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>I Componenti</h2>
+      </div>
+      <table class="members-table">
+        <tbody>
+          <tr><td>Baldo Andrea</td><td>Euphonium</td></tr>
+          <tr><td>Balerna Magda</td><td>Flauto</td></tr>
+          <tr><td>Barbera Martin</td><td>Tromba</td></tr>
+          <tr><td>Bazzara Sofia</td><td>Clarinetto</td></tr>
+          <tr><td>Bergamasco Francesco</td><td>Tromba</td></tr>
+          <tr><td>Bertogna Susanna</td><td>Clarinetto</td></tr>
+          <tr><td>Bradamante Roberto</td><td>Sax</td></tr>
+          <tr><td>Cammarata Enrico</td><td>Clarinetto</td></tr>
+          <tr><td>Cammarata Ludovico</td><td>Sax</td></tr>
+          <tr><td>Canciani Marina</td><td>Clarinetto</td></tr>
+          <tr><td>Canesin Lorenzo</td><td>Sax</td></tr>
+          <tr><td>Cerni Marco</td><td>Tromba</td></tr>
+          <tr><td>Ceschia Alessandro</td><td>Sax</td></tr>
+          <tr><td>Cociani Margherita</td><td>Clarinetto</td></tr>
+          <tr><td>Dose Matilda</td><td>Flauto</td></tr>
+          <tr><td>Fum Danilo</td><td>Clarinetto</td></tr>
+          <tr><td>Fumis Paola</td><td>Clarinetto</td></tr>
+          <tr><td>Galeone Diego</td><td>Clarinetto</td></tr>
+          <tr><td>Gava Nicholas</td><td>Tuba</td></tr>
+          <tr><td>Miniussi Massimo</td><td>Tuba</td></tr>
+          <tr><td>Mio Luca</td><td>Clarinetto</td></tr>
+          <tr><td>Morea Lorenzo</td><td>Flauto</td></tr>
+          <tr><td>Moschioni Eva</td><td>Clarinetto</td></tr>
+          <tr><td>Nocent Franco</td><td>Tromba</td></tr>
+          <tr><td>Nocent Lino</td><td>Trombone</td></tr>
+          <tr><td>Passon Sergio</td><td>Tromba</td></tr>
+          <tr><td>Petracco Marino</td><td>Percussioni</td></tr>
+          <tr><td>Pizzin Barbara</td><td>Clarinetto</td></tr>
+          <tr><td>Poclen Michele</td><td>Clarinetto</td></tr>
+          <tr><td>Revignas Gloria</td><td>Clarinetto</td></tr>
+          <tr><td>Scoch Federico</td><td>Sax</td></tr>
+          <tr><td>Tomizza Roberto</td><td>Sax</td></tr>
+          <tr><td>Toso Enrico</td><td>Tuba</td></tr>
+          <tr><td>Trentin Massimo</td><td>Tuba</td></tr>
+          <tr><td>Trentin Stefano</td><td>Tromba</td></tr>
+          <tr><td>Zanello Simone</td><td>Corno</td></tr>
+          <tr><td>Zimolo Gabriele</td><td>Clarinetto</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro-quote {
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    color: var(--color-primary, #4a3000);
+  }
+  .photo-placeholder {
+    border: 2px dashed var(--color-border, #ccc);
+    border-radius: 8px;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--color-text-muted, #999);
+    font-style: italic;
+    margin: 2.5rem 0;
+  }
+  .board-list {
+    list-style: none;
+    padding: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .board-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-border, #e8e8e8);
+    font-size: 1rem;
+  }
+  .board-list li:last-child { border-bottom: none; }
+  .members-table {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 0.97rem;
+  }
+  .members-table td {
+    padding: 0.35rem 1rem 0.35rem 0;
+    border-bottom: 1px solid var(--color-border, #eee);
+    vertical-align: top;
+  }
+  .members-table td:first-child { font-weight: 500; min-width: 200px; }
+  .members-table td:last-child { color: var(--color-secondary, #7a5c00); font-style: italic; }
+  .members-table tr:last-child td { border-bottom: none; }
+</style>

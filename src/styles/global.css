@@ -578,46 +578,47 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Courses Section --- */
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
 }
 
 .course-card {
     background: var(--color-white);
-    border-radius: 8px;
-    padding: 32px;
+    border-radius: 6px;
+    padding: 8px 10px;
     border: 1px solid var(--color-border);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.2s ease;
 }
 
 .course-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 }
 
 .course-icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 20px;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 4px;
     background: var(--color-bg-alt);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 16px;
     color: var(--color-primary);
-    border: 2px solid var(--color-secondary-light);
+    border: 1px solid var(--color-secondary-light);
 }
 
 .course-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: 14px;
+    margin-bottom: 3px;
 }
 
 .course-card p {
-    font-size: 15px;
+    font-size: 12px;
     color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.4;
 }
 
 /* --- Contact --- */
@@ -918,6 +919,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-light);
     background: var(--color-bg-alt);
     line-height: 1.8;
+    text-align: center;
 }
 
 .chapter-figure figcaption span {

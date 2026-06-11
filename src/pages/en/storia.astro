@@ -120,8 +120,9 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
       }
       .chapter-content :global(blockquote p:last-child) { margin-bottom: 0; }
       .chapter-content :global(img) { max-width: 100%; height: auto; display: block; margin: 28px auto; }
+      .chapter-content :global(p:has(> img)) { text-align: center; }
       .chapter-content :global(figure) { margin: 28px 0; text-align: center; }
-      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; }
+      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; text-align: center; }
       .chapter-content :global(strong) { color: var(--color-primary, #2c1810); }
       .chapter-content :global(ul), .chapter-content :global(ol) { margin: 0 0 1.3em 1.5em; }
       .chapter-content :global(li) { margin-bottom: 0.4em; }
@@ -153,32 +154,14 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
 
   <section class="section">
     <div class="container prose">
-      <p style="font-size: 19px; font-style: italic; color: var(--color-text-light); text-align: center; margin-bottom: 40px;">
-        "The only wind band in the province of Gorizia to have carried on its activities
-        uninterruptedly for over 150 years, spanning three different centuries,
-        it is one of the richest ensembles in terms of tradition in the entire
-        Friuli Venezia Giulia region."
+      <p>
+        The text presented here is the unabridged translation of the volume <em>"150 … e passa: La nostra storia, raccontata da noi"</em> (<em>"150 … and counting: Our history, told by us"</em>), published by the Società Filarmonica di Turriaco on the occasion of its 150th anniversary of foundation.
       </p>
       <p>
-        The Società Filarmonica di Turriaco was founded in <strong>1870</strong>, on the initiative
-        of a small group of local enthusiasts. A witness to the historical evolution
-        that transformed the Isonzo lands from Habsburg territory to an integral part
-        of the Italian state, the ensemble represents an exceptional link
-        between the most recent musical trends and the rhythms and tonalities of
-        Central European culture.
+        The text is made available here to give the widest possible audience the opportunity to discover the story of one of the most tradition-rich wind bands in Friuli Venezia Giulia.
       </p>
       <p>
-        The band took its first steps under the direction of maestro
-        <strong>Guglielmo Schubert</strong>; after various vicissitudes, including an internal split
-        that led, at the beginning of the twentieth century, to the coexistence of two band groups,
-        it found its definitive structure in <strong>1920</strong>, retaining the name
-        "Società Filarmonica di Turriaco".
-      </p>
-      <p>
-        Currently, the musical ensemble is composed of around forty active members,
-        including amateurs and conservatory graduates. Independent in its organisational
-        and administrative management, the Society is led by a board elected by the
-        members' assembly.
+        Through the direct voices of those who lived it, the reader can trace a musical life that has spanned three centuries of history — rooted in the local territory and driven by a shared passion that has made the Filarmonica di Turriaco a point of reference in the regional wind-band scene.
       </p>
     </div>
   </section>
@@ -187,7 +170,7 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
     <div class="toc-inner">
       <span class="toc-label">{t.storiaTocLabel}</span>
       {chapters.map((ch, i) => (
-        <a href={`#${ch.id}`}>{i + 1} &mdash; {ch.title}</a>
+        <a href={`#${ch.id}`}>{ch.label !== ch.title ? ch.label + ' — ' + ch.title : ch.label}</a>
       ))}
     </div>
   </nav>
@@ -232,5 +215,17 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
       { rootMargin: '-20% 0px -75% 0px' }
     );
     sections.forEach((section) => observer.observe(section));
+
+    // Jump instantly to chapter anchors (no slow smooth-scroll across the full page)
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href')!.slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+        history.pushState(null, '', `#${id}`);
+      });
+    });
   </script>
 </BaseLayout>

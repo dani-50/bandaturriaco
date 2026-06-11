@@ -123,8 +123,9 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
       }
       .chapter-content :global(blockquote p:last-child) { margin-bottom: 0; }
       .chapter-content :global(img) { max-width: 100%; height: auto; display: block; margin: 28px auto; }
+      .chapter-content :global(p:has(> img)) { text-align: center; }
       .chapter-content :global(figure) { margin: 28px 0; text-align: center; }
-      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; }
+      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; text-align: center; }
       .chapter-content :global(strong) { color: var(--color-primary, #2c1810); }
       .chapter-content :global(ul), .chapter-content :global(ol) { margin: 0 0 1.3em 1.5em; }
       .chapter-content :global(li) { margin-bottom: 0.4em; }
@@ -158,32 +159,14 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
   <!-- Introduzione -->
   <section class="section">
     <div class="container prose">
-      <p style="font-size: 19px; font-style: italic; color: var(--color-text-light); text-align: center; margin-bottom: 40px;">
-        "Unica banda della provincia di Gorizia ad aver portato avanti la propria attività
-        ininterrottamente da oltre 150 anni, a cavallo di tre secoli diversi,
-        è uno dei complessi più ricchi di tradizione dell'intero
-        Friuli Venezia Giulia."
+      <p>
+        Quella qui riportata è la versione letterale del volume <em>«150 … e passa: La nostra storia, raccontata da noi»</em>, pubblicato dalla Società Filarmonica di Turriaco in occasione del proprio 150° anniversario di fondazione.
       </p>
       <p>
-        La Società Filarmonica di Turriaco è stata fondata nel <strong>1870</strong>, per iniziativa
-        di un piccolo gruppo di appassionati del luogo. Testimone dell'evoluzione storica
-        che ha trasformato le terre isontine da territorio asburgico a parte integrante
-        dello stato italiano, il complesso rappresenta un eccezionale trait d'union
-        fra le più recenti tendenze musicali e i ritmi e le sonorità della
-        cultura mitteleuropea.
+        Il testo viene reso qui disponibile per offrire a un pubblico il più vasto possibile l'opportunità di conoscere le vicende di una delle bande più ricche di tradizione del Friuli Venezia Giulia.
       </p>
       <p>
-        La banda ha mosso i suoi primi passi sotto la direzione del maestro
-        <strong>Guglielmo Schubert</strong>; dopo varie vicissitudini, tra cui una scissione interna
-        che portò, all'inizio del Novecento, alla coesistenza di due gruppi bandistici,
-        ha trovato il suo assetto definitivo nel <strong>1920</strong>, mantenendo la denominazione
-        di "Società Filarmonica di Turriaco".
-      </p>
-      <p>
-        Attualmente il complesso musicale è composto da una quarantina di soci effettivi,
-        fra dilettanti e diplomati al conservatorio. Autonoma nella gestione organizzativa
-        e amministrativa, la Società è guidata da un consiglio direttivo eletto dall'assemblea
-        dei soci.
+        Attraverso la voce diretta dei protagonisti, si ripercorre una vita musicale che ha toccato tre secoli di storia, vissuta radicata nel territorio e con una passione condivisa che hanno portato la Filarmonica di Turriaco a essere un un punto di riferimento nel panorama bandistico regionale.
       </p>
     </div>
   </section>
@@ -193,7 +176,7 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
     <div class="toc-inner">
       <span class="toc-label">{t.storiaTocLabel}</span>
       {chapters.map((ch, i) => (
-        <a href={`#${ch.id}`}>{i + 1} &mdash; {ch.title}</a>
+        <a href={`#${ch.id}`}>{ch.label !== ch.title ? ch.label + ' — ' + ch.title : ch.label}</a>
       ))}
     </div>
   </nav>
@@ -247,5 +230,17 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
     );
 
     sections.forEach((section) => observer.observe(section));
+
+    // Jump instantly to chapter anchors (no slow smooth-scroll across the full page)
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href')!.slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+        history.pushState(null, '', `#${id}`);
+      });
+    });
   </script>
 </BaseLayout>

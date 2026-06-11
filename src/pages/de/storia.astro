@@ -120,8 +120,9 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
       }
       .chapter-content :global(blockquote p:last-child) { margin-bottom: 0; }
       .chapter-content :global(img) { max-width: 100%; height: auto; display: block; margin: 28px auto; }
+      .chapter-content :global(p:has(> img)) { text-align: center; }
       .chapter-content :global(figure) { margin: 28px 0; text-align: center; }
-      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; }
+      .chapter-content :global(figcaption) { font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 6px; text-align: center; }
       .chapter-content :global(strong) { color: var(--color-primary, #2c1810); }
       .chapter-content :global(ul), .chapter-content :global(ol) { margin: 0 0 1.3em 1.5em; }
       .chapter-content :global(li) { margin-bottom: 0.4em; }
@@ -153,32 +154,14 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
 
   <section class="section">
     <div class="container prose">
-      <p style="font-size: 19px; font-style: italic; color: var(--color-text-light); text-align: center; margin-bottom: 40px;">
-        „Die einzige Blaskapelle in der Provinz Görz, die ihre Tätigkeit
-        ununterbrochen über 150 Jahre hinweg, verteilt auf drei verschiedene Jahrhunderte,
-        ausgeübt hat &mdash; eines der traditionsreichsten Blasorchester
-        der gesamten Region Friaul-Julisch Venetien."
+      <p>
+        Der hier wiedergegebene Text ist die ungekürzte &Uuml;bersetzung des Bandes <em>«150 … e passa: La nostra storia, raccontata da noi»</em> (<em>«150 … und mehr: Unsere Geschichte, von uns erzählt»</em>), der von der Società Filarmonica di Turriaco anlässlich ihres 150-jährigen Gründungsjubiläums veröffentlicht wurde.
       </p>
       <p>
-        Die Società Filarmonica di Turriaco wurde <strong>1870</strong> auf Initiative
-        einer kleinen Gruppe lokaler Enthusiasten gegründet. Als Zeuge der historischen Entwicklung,
-        die das Isonzo-Gebiet von habsburgischem Territorium zu einem integralen Bestandteil
-        des italienischen Staates machte, stellt das Ensemble eine außergewöhnliche Verbindung
-        zwischen den neuesten musikalischen Strömungen und den Rhythmen und Klängen der
-        mitteleuropäischen Kultur dar.
+        Der Text wird hier zur Verfügung gestellt, um einem möglichst breiten Publikum die Möglichkeit zu geben, die Geschichte eines der traditionsreichsten Blasorchester Friaul-Julisch Venetiens kennenzulernen.
       </p>
       <p>
-        Die Kapelle machte ihre ersten Schritte unter der Leitung von Kapellmeister
-        <strong>Guglielmo Schubert</strong>; nach wechselvollen Ereignissen, darunter eine interne Spaltung,
-        die Anfang des 20. Jahrhunderts zur Koexistenz zweier Musikgruppen führte,
-        fand sie <strong>1920</strong> ihre endgültige Form und behielt den Namen
-        „Società Filarmonica di Turriaco" bei.
-      </p>
-      <p>
-        Derzeit besteht das Musikensemble aus rund vierzig aktiven Mitgliedern,
-        darunter Amateure und Konservatoriumsabsolventen. Unabhängig in der organisatorischen
-        und administrativen Führung, wird die Gesellschaft von einem Vorstand geleitet,
-        der von der Mitgliederversammlung gewählt wird.
+        Durch die unmittelbare Stimme der Beteiligten lässt sich ein Musikleben nachverfolgen, das drei Jahrhunderte Geschichte umspannt — verwurzelt im Territorium und getragen von einer gemeinsamen Leidenschaft, die die Filarmonica di Turriaco zu einem Referenzpunkt im regionalen Blasmusikpanorama gemacht hat.
       </p>
     </div>
   </section>
@@ -187,7 +170,7 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
     <div class="toc-inner">
       <span class="toc-label">{t.storiaTocLabel}</span>
       {chapters.map((ch, i) => (
-        <a href={`#${ch.id}`}>{i + 1} &mdash; {ch.title}</a>
+        <a href={`#${ch.id}`}>{ch.label !== ch.title ? ch.label + ' — ' + ch.title : ch.label}</a>
       ))}
     </div>
   </nav>
@@ -232,5 +215,17 @@ chapterFiles.sort((a, b) => a.file.localeCompare(b.file));
       { rootMargin: '-20% 0px -75% 0px' }
     );
     sections.forEach((section) => observer.observe(section));
+
+    // Jump instantly to chapter anchors (no slow smooth-scroll across the full page)
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href')!.slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+        history.pushState(null, '', `#${id}`);
+      });
+    });
   </script>
 </BaseLayout>

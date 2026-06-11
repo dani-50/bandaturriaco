@@ -12,8 +12,8 @@ const t = ui[lang];
 
 const langSwitcherPages: Record<string, string> = {
   'index': 'index',
-  'societa': 'societa',
-  'banda': 'banda',
+  'novita': 'novita',
+  'chisiamo': 'chisiamo',
   'corsi': 'corsi',
   'eventi': 'eventi',
   'storia': 'storia',
@@ -60,15 +60,15 @@ const switchPath = (l: string) => switchPage === 'index' ? `${base}/${l}` : `${b
         <ul>
           <li>
             <a
-              href={`${base}/${lang}/societa`}
-              class:list={[{ active: currentPage === 'societa' }]}
-            >{t.nav.societa}</a>
+              href={`${base}/${lang}/novita`}
+              class:list={[{ active: currentPage === 'novita' }]}
+            >{t.nav.novita}</a>
           </li>
           <li>
             <a
-              href={`${base}/${lang}/banda`}
-              class:list={[{ active: currentPage === 'banda' }]}
-            >{t.nav.banda}</a>
+              href={`${base}/${lang}/chisiamo`}
+              class:list={[{ active: currentPage === 'chisiamo' }]}
+            >{t.nav.chisiamo}</a>
           </li>
           <li>
             <a

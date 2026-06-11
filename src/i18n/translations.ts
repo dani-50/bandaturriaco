@@ -17,8 +17,8 @@ export const ui = {
 
     // Navigation
     nav: {
-      societa: 'Società',
-      banda: 'Banda',
+      novita: 'Novità',
+      chisiamo: 'Chi Siamo',
       corsi: 'Corsi',
       eventi: 'Eventi',
       storia: 'Storia',
@@ -45,12 +45,14 @@ export const ui = {
 
     // Storia chapters
     storiaChapters: [
+      { id: 'prefazione', label: 'Prefazione', title: 'Prefazione' },
       { id: 'capitolo-1', label: 'Capitolo 1', title: 'Il territorio e la popolazione' },
       { id: 'capitolo-2', label: 'Capitolo 2', title: 'Le radici asburgiche' },
       { id: 'capitolo-3', label: 'Capitolo 3', title: 'Dal Regno alla Repubblica' },
       { id: 'capitolo-4', label: 'Capitolo 4', title: 'I mitici anni Settanta (e Ottanta)' },
       { id: 'capitolo-5', label: 'Capitolo 5', title: 'Verso il millennio (con riflessioni)' },
       { id: 'capitolo-6', label: 'Capitolo 6', title: "Gli ultimi vent'anni" },
+      { id: 'postfazione', label: 'Postfazione', title: 'Postfazione' },
     ],
     storiaTocLabel: 'Capitoli',
     storiaNavPrev: '← Capitolo',
@@ -62,8 +64,8 @@ export const ui = {
     tagline: 'Musical Association since 1870',
 
     nav: {
-      societa: 'Society',
-      banda: 'Band',
+      novita: 'News',
+      chisiamo: 'About Us',
       corsi: 'Courses',
       eventi: 'Events',
       storia: 'History',
@@ -87,12 +89,14 @@ export const ui = {
     logoAlt: 'Società Filarmonica di Turriaco logo',
 
     storiaChapters: [
+      { id: 'preface', label: 'Preface', title: 'Preface' },
       { id: 'chapter-1', label: 'Chapter 1', title: 'The Territory and its People' },
       { id: 'chapter-2', label: 'Chapter 2', title: 'The Habsburg Roots' },
       { id: 'chapter-3', label: 'Chapter 3', title: 'From Kingdom to Republic' },
       { id: 'chapter-4', label: 'Chapter 4', title: 'The Legendary Seventies (and Eighties)' },
       { id: 'chapter-5', label: 'Chapter 5', title: 'Toward the Millennium (with Reflections)' },
       { id: 'chapter-6', label: 'Chapter 6', title: 'The Last Twenty Years' },
+      { id: 'afterword', label: 'Afterword', title: 'Afterword' },
     ],
     storiaTocLabel: 'Chapters',
     storiaNavPrev: '← Chapter',
@@ -104,8 +108,8 @@ export const ui = {
     tagline: 'Musikverein seit 1870',
 
     nav: {
-      societa: 'Verein',
-      banda: 'Kapelle',
+      novita: 'Neuigkeiten',
+      chisiamo: 'Über uns',
       corsi: 'Kurse',
       eventi: 'Veranstaltungen',
       storia: 'Geschichte',
@@ -129,12 +133,14 @@ export const ui = {
     logoAlt: 'Logo der Società Filarmonica di Turriaco',
 
     storiaChapters: [
+      { id: 'vorwort', label: 'Vorwort', title: 'Vorwort' },
       { id: 'kapitel-1', label: 'Kapitel 1', title: 'Das Gebiet und seine Bevölkerung' },
       { id: 'kapitel-2', label: 'Kapitel 2', title: 'Die habsburgischen Wurzeln' },
       { id: 'kapitel-3', label: 'Kapitel 3', title: 'Vom Königreich zur Republik' },
       { id: 'kapitel-4', label: 'Kapitel 4', title: 'Die sagenhaften Siebzigerjahre (und Achtziger)' },
       { id: 'kapitel-5', label: 'Kapitel 5', title: 'Dem Jahrtausend entgegen (mit Reflexionen)' },
       { id: 'kapitel-6', label: 'Kapitel 6', title: 'Die letzten zwanzig Jahre' },
+      { id: 'nachwort', label: 'Nachwort', title: 'Nachwort' },
     ],
     storiaTocLabel: 'Kapitel',
     storiaNavPrev: '← Kapitel',
