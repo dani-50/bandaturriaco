@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Stefano Trentin — Curriculum — Società Filarmonica di Turriaco" lang="it" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/it/corsi`}>← I Nostri Corsi</a></p>
+      <h1>Stefano Trentin</h1>
+      <p class="page-header-sub">Tromba</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_stefano.jpg`}
+          alt="Stefano Trentin"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>Inizia i suoi studi musicali a 6 anni presso la scuola di musica della banda <em>Tita Michelas</em> di Fiumicello sotto la guida del maestro Gino Comisso il quale gli trasmette la passione per la tromba. Successivamente continua gli studi con i maestri Gabriele Boscarato, Federico Biondi e Loris Beltrame, sempre all'interno della stessa scuola di musica.</p>
+      <p>Dal 2020 al 2025 prende parte alla <em>Banda Giovanile Sinfonica Nazionale</em> promossa da ANBIMA.</p>
+      <p>Nel 2023 intraprende i suoi studi presso il conservatorio <em>Jacopo Tomadini</em> di Udine sotto la guida del maestro Carlo Beltrami e allo stesso tempo partecipa a diverse masterclass di perfezionamento anche a livello europeo e extra-europeo come l'<em>Italian Brass Week</em> o il <em>Music System Italy/Japan</em> con diversi docenti di fama internazionale come: Andrea Dell'Ira, Andrea Tofanelli, Rex Richardson, Omar Tomasoni, Ottaviano Cristofoli, Francisco "Pacho" Flores, Jens Lindemann, Piergiuseppe Doldi, Marco Pierobon, Jure Gradišnik e Bertold Stecher.</p>
+      <p>Collabora con l'orchestra <em>Dolomiti Symphonie</em>, l'orchestra Opera Prima Wien, l'orchestra <em>Fil(m)armonica</em> di Mossa e l'orchestra di fiati <em>Val Isonzo</em>, oltre a svolgere regolare servizio nelle produzioni del conservatorio stesso come per l'opera <em>Gianni Schicchi</em> di Giacomo Puccini eseguita in occasione del Mittelfest 2024.</p>
+      <p>Nel 2024 ha preso parte all'EYBB (<em>European Youth Brass Band</em>) promossa dalla EBBA (<em>European Brass Band Association</em>) in occasione dei campionati europei di <em>brass band</em> tenutosi a Palanga (Lituania) nella quale ha ricoperto il ruolo di cornetta solista.</p>
+      <p>Insegna in diverse scuole di musica delle bande quali: <em>Tita Michelas</em> di Fiumicello, <em>Società Filarmonica</em> di Turriaco, <em>Gioacchino Rossini</em> di Castions di Strada e prende parte annualmente al progetto "Band@scuola" per cui insegna strumenti ad ottone ai bambini delle scuole elementari.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

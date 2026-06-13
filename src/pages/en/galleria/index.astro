@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { galleryEvents } from '../../../data/gallery-events';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Gallery — Società Filarmonica di Turriaco" lang="en" currentPage="galleria">
+  <div class="page-header">
+    <div class="container">
+      <h1>Gallery</h1>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container prose">
+      <p class="intro-quote"><em>This section is under construction. In all likelihood, it always will be.</em></p>
+      <p>A brass band is a strange thing to photograph. The musicians have their hands full. The marchers keep their eyes forward. We are lucky to have someone — thank you, friends! — who follows us and gives us precious shots, but systematic coverage event by event, especially when it comes to video, is something we cannot guarantee.</p>
+      <p>That's why this gallery exists — and why it needs you.</p>
+      <p>This section doesn't feed itself. It lives on the contributions of those who were there: someone who snapped a photo during a parade, someone who recorded a video on their phone, someone who has tucked away somewhere a memory of an event where the Filarmonica took part.</p>
+      <p>If you have something like that — old or recent, professional or taken in a hurry — send it to us. The address is <strong>info@bandaturriaco.it</strong>. We ask only two things: tell us which event the material relates to, and let us know whether or not you want your name to appear alongside what you've sent.</p>
+      <p>Not everything we receive will be publishable, but we'll do our best to give every contribution the attention it deserves.</p>
+      <p>This gallery aspires to become the heart of the website: not an archive to observe from the outside, but a place to build and share together. You have the eyes, the phones, the memories. We have the space to collect them. Help us fill it.</p>
+    </div>
+  </section>
+
+  <!-- 2026 Performances -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>2026 Performances</h2>
+        <p>Click on an event to browse the photos</p>
+      </div>
+      <div class="gallery-event-grid">
+        {galleryEvents.map(ev => (
+          <a href={`${base}/en/galleria/${ev.slug}`} class="gallery-event-card">
+            <div
+              class="gallery-event-cover"
+              style={`background-image: url('${base}${ev.coverImg}')`}
+            >
+              <div class="gallery-event-overlay">
+                <span class="gallery-event-date-badge">{ev.dateLabel.slice(0, 5)}</span>
+                <div class="gallery-event-label">
+                  <h3>{ev.en.title}</h3>
+                  <p>{ev.en.place}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro-quote {
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    color: var(--color-primary, #4a3000);
+  }
+</style>

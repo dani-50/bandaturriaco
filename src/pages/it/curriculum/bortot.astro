@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Veronica Bortot — Curriculum — Società Filarmonica di Turriaco" lang="it" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/it/corsi`}>← I Nostri Corsi</a></p>
+      <h1>Veronica Bortot</h1>
+      <p class="page-header-sub">Flauto traverso</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_valeria.jpg`}
+          alt="Veronica Bortot"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>Ha conseguito il diploma accademico di secondo livello in flauto traverso con il massimo dei voti al Biennio specialistico del Conservatorio <em>J. Tomadini</em> di Udine con il m° Giorgio Di Giorgi, e la laurea triennale in Lingue e Letterature Straniere all'Università degli Studi di Trieste.</p>
+      <p>Ha frequentato i Corsi Musicali Avanzati dell'Accademia De Grazia a Gorizia e il master dell'<em>Orpheus International Music Academy</em> di Vienna tenuti dalla Prof.ssa Luisa Sello, e ha partecipato a masterclass di perfezionamento con maestri come András Adorján, Carlo Jans, Peter-Lukas Graf e Matej Zupan.</p>
+      <p>Si esibisce in numerosi concerti sia in Italia sia all'estero, anche con formazioni musicali di Udine e di Trieste, prendendo parte ad importanti festival e rassegne.</p>
+      <p>Ha suonato come ospite per una diretta di Piazza Verdi presso gli studi radiofonici di Rai Radio3 di Milano e ha preso parte anche al Podcast di <em>NoMus</em> (centro studi e ricerche sulla musica del '900 e contemporanea) di Milano, ed attualmente è docente di flauto in alcune scuole nella provincia di Gorizia.</p>
+      <p>Come flautista del gruppo <em>Le Agane</em> di Luisa Sello, ha vinto il Primo Premio al Concorso Internazionale Euroregione 2022 e ha suonato in eventi di prestigio quali: il <em>Festival Imago Sloveniae</em>, l'<em>Open-air Concert</em> al Museum Quartier di Vienna (Austria), l'<em>International Summer Festival</em> di Varna (Bulgaria), il <em>Festival Kammermusik</em> di Novi Sad (Serbia) e la <em>Convention NFA</em> di Chicago (USA).</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

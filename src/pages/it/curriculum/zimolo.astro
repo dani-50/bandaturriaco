@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Gabriele Zimolo — Curriculum — Società Filarmonica di Turriaco" lang="it" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/it/corsi`}>← I Nostri Corsi</a></p>
+      <h1>Gabriele Zimolo</h1>
+      <p class="page-header-sub">Clarinetto</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_zimolo.jpg`}
+          alt="Gabriele Zimolo"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>Si avvicina allo studio del clarinetto all'età di 10 anni presso la Scuola di Musica della Società Filarmonica di Turriaco sotto la guida di Flaviano Martinello, insegnante che lo accompagnerà poi fino al diploma conseguito da privatista presso il conservatorio <em>Tartini</em> di Trieste a soli 19 anni.</p>
+      <p>Dopo il diploma si perfeziona con i maestri Lucchetta, Miani e Urdan sia in veste di solista sia nell'ambito di formazioni cameristiche quali quintetti con archi e complessi di clarinetti.</p>
+      <p>Oltre a recital solistici in duo con il pianoforte, ha avuto modo di collaborare con numerosi gruppi regionali quali l'orchestra dei <em>Cameristi Triestini</em>, l'orchestra a fiati <em>Val d'Isonzo</em> (vittoriosa in diversi concorsi nazionali) e molte delle bande della realtà locale.</p>
+      <p>Fin da giovane suona il clarinetto piccolo in Mib ed in particolare in ensemble di soli clarinetti quali il <em>Claricoro</em>.</p>
+      <p>Insegna clarinetto e teoria e solfeggio in diverse scuole di musica delle province di Gorizia ed Udine e ha avuto modo di dirigere diverse bande giovanili di queste scuole.</p>
+      <p>Dal 2025 è direttore musicale del gruppo bandistico <em>Tita Michelas</em> di Fiumicello.</p>
+      <p>Parallelamente agli studi musicali, ha conseguito il diploma di ragioniere e la Laurea Specialistica in Informatica.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

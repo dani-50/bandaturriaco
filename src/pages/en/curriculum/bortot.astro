@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Veronica Bortot — Curriculum — Società Filarmonica di Turriaco" lang="en" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/en/corsi`}>← Our Courses</a></p>
+      <h1>Veronica Bortot</h1>
+      <p class="page-header-sub">Flute</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_valeria.jpg`}
+          alt="Veronica Bortot"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>She holds a second-level academic degree in flute with highest honours from the Advanced Biennium at the Conservatorio <em>J. Tomadini</em> of Udine under Maestro Giorgio Di Giorgi, as well as a three-year degree in Foreign Languages and Literatures from the University of Trieste.</p>
+      <p>She attended the Advanced Music Courses at the Accademia De Grazia in Gorizia and the master programme of the <em>Orpheus International Music Academy</em> in Vienna under Professor Luisa Sello, and has taken part in masterclasses with teachers such as András Adorján, Carlo Jans, Peter-Lukas Graf and Matej Zupan.</p>
+      <p>She performs in numerous concerts both in Italy and abroad, including with ensembles from Udine and Trieste, participating in important festivals and concert series.</p>
+      <p>She has played as a guest for a live broadcast of Piazza Verdi at the RAI Radio3 studios in Milan, and has also taken part in the Podcast of <em>NoMus</em> (centre for research on twentieth-century and contemporary music) in Milan. She is currently a flute teacher at several music schools in the province of Gorizia.</p>
+      <p>As flutist of the ensemble <em>Le Agane</em> by Luisa Sello, she won First Prize at the 2022 International Euroregion Competition and has performed at prestigious events including: the <em>Festival Imago Sloveniae</em>, the <em>Open-air Concert</em> at the Museum Quartier in Vienna (Austria), the <em>International Summer Festival</em> in Varna (Bulgaria), the <em>Festival Kammermusik</em> in Novi Sad (Serbia), and the <em>NFA Convention</em> in Chicago (USA).</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

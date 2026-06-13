@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { galleryEvents, type GalleryEvent } from '../../../data/gallery-events';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export function getStaticPaths() {
+  return galleryEvents.map(ev => ({
+    params: { event: ev.slug },
+    props: { ev },
+  }));
+}
+
+interface Props { ev: GalleryEvent; }
+const { ev } = Astro.props;
+const { en: t } = ev;
+---
+
+<BaseLayout
+  title={`${t.title} — Gallery — Società Filarmonica di Turriaco`}
+  lang="en"
+  currentPage="galleria"
+>
+  <div class="page-header">
+    <div class="container">
+      <h1>{t.title}</h1>
+      <p class="page-header-sub">{ev.dateLabel} &mdash; {t.place}</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      {ev.media.length === 0 ? (
+        <p class="no-media">
+          No photos available for this event yet.
+          <a href="mailto:info@bandaturriaco.it">Send us yours!</a>
+        </p>
+      ) : (
+        <div class="slider-container" id="slider">
+          <div class="slider-viewport">
+
+            <button class="slider-arrow slider-arrow-prev" id="prev" aria-label="Previous">&#8249;</button>
+
+            {ev.media.map((item, i) => (
+              <div class={`slide${i === 0 ? ' active' : ''}`}>
+                {item.type === 'image' ? (
+                  <img
+                    src={`${base}${item.src}`}
+                    alt={item.caption ?? t.title}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                  />
+                ) : (
+                  <video controls preload="metadata">
+                    <source src={`${base}${item.src}`} type="video/mp4" />
+                    Your browser does not support video playback.
+                  </video>
+                )}
+                {item.caption && <p class="slide-caption">{item.caption}</p>}
+              </div>
+            ))}
+
+            <button class="slider-arrow slider-arrow-next" id="next" aria-label="Next">&#8250;</button>
+          </div>
+
+          <div class="slider-footer">
+            <div class="slider-dots" id="dots">
+              {ev.media.map((_, i) => (
+                <button class={`dot${i === 0 ? ' active' : ''}`} data-i={String(i)} aria-label={`Photo ${i + 1}`}></button>
+              ))}
+            </div>
+            <span class="slide-counter" id="counter">1 / {ev.media.length}</span>
+          </div>
+        </div>
+      )}
+      <div class="back-to-gallery">
+        <a href={`${base}/en/galleria`} class="back-to-gallery-btn">&larr; Back to Gallery</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const slides = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+  const dots = Array.from(document.querySelectorAll<HTMLElement>('.dot'));
+  const counter = document.getElementById('counter');
+  if (slides.length === 0) throw new Error('no slides');
+  let cur = 0;
+
+  function go(n: number) {
+    slides[cur].classList.remove('active');
+    dots[cur]?.classList.remove('active');
+    cur = ((n % slides.length) + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur]?.classList.add('active');
+    if (counter) counter.textContent = `${cur + 1} / ${slides.length}`;
+  }
+
+  document.getElementById('prev')?.addEventListener('click', () => go(cur - 1));
+  document.getElementById('next')?.addEventListener('click', () => go(cur + 1));
+  dots.forEach(d => d.addEventListener('click', () => go(Number(d.dataset.i))));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') go(cur - 1);
+    if (e.key === 'ArrowRight') go(cur + 1);
+  });
+</script>
+
+<style>
+  .back-to-gallery {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .back-to-gallery-btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .back-to-gallery-btn:hover { background: var(--color-secondary); }
+  .page-header-sub {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 4px;
+  }
+</style>

@@ -18,6 +18,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <div class="footer-about">
         <h3>{t.footer.aboutTitle}</h3>
         <p>{t.footer.aboutText}</p>
+        {lang === 'it' && (
+          <div class="footer-sostienici">
+            <h3>Sostienici</h3>
+            <p>con il tuo <strong>5 per mille</strong> destinandolo al codice fiscale</p>
+            <p class="footer-cf">81&nbsp;005&nbsp;030&nbsp;317</p>
+          </div>
+        )}
       </div>
       <div class="footer-links">
         <h3>{t.footer.navTitle}</h3>

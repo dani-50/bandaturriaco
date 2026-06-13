@@ -31,6 +31,9 @@ export const ui = {
       aboutTitle: 'Società Filarmonica di Turriaco',
       aboutText:
         'Fondata nel 1870, la Società Filarmonica di Turriaco è uno dei complessi bandistici più ricchi di tradizione del Friuli Venezia Giulia. Associata ANBIMA FVG.',
+      sostieniciTitle: 'Sostienici',
+      sostieniciText:
+        'con il tuo <strong>5 per mille</strong> destinandolo al codice fiscale <span class="cf-number">81&nbsp;005&nbsp;030&nbsp;317</span>',
       navTitle: 'Navigazione',
       followTitle: 'Seguici',
       address: '34070 Turriaco (GO)<br>Friuli Venezia Giulia, Italia',

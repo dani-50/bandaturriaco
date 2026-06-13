@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { galleryEvents } from '../../../data/gallery-events';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Fotogalerie — Società Filarmonica di Turriaco" lang="de" currentPage="galleria">
+  <div class="page-header">
+    <div class="container">
+      <h1>Galerie</h1>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container prose">
+      <p class="intro-quote"><em>Dieser Bereich befindet sich im Aufbau. Höchstwahrscheinlich wird er das immer sein.</em></p>
+      <p>Eine Blaskapelle ist eine merkwürdige Sache zum Fotografieren. Wer spielt, hat die Hände voll. Wer aufmarschiert, schaut geradeaus. Wir haben das Glück, jemanden zu haben — danke, Freunde! — der uns begleitet und uns wertvolle Aufnahmen schenkt, aber eine systematische Dokumentation Veranstaltung für Veranstaltung, vor allem was Videos betrifft, ist etwas, das wir nicht gewährleisten können.</p>
+      <p>Deshalb gibt es diese Galerie — und deshalb braucht sie euch.</p>
+      <p>Dieser Bereich ernährt sich nicht von selbst. Er lebt von den Beiträgen derer, die dabei waren: jemand, der bei einem Aufmarsch ein Foto gemacht hat, jemand, der ein Video mit dem Handy aufgenommen hat, jemand, der irgendwo eine Erinnerung an eine Veranstaltung aufbewahrt, an der die Filarmonica teilgenommen hat.</p>
+      <p>Wenn ihr so etwas habt — alt oder neu, professionell oder schnell aufgenommen — schickt es uns. Die Adresse lautet <strong>info@bandaturriaco.it</strong>. Wir bitten nur um zwei Dinge: teilt uns mit, auf welche Veranstaltung sich das Material bezieht, und sagt uns, ob euer Name neben dem, was ihr geschickt habt, erscheinen soll oder nicht.</p>
+      <p>Nicht alles, was wir erhalten, kann veröffentlicht werden, aber wir werden unser Bestes tun, um jedem Beitrag gerecht zu werden.</p>
+      <p>Diese Galerie soll zum Herzstück der Website werden: kein Archiv, das man von außen betrachtet, sondern ein Ort, den man gemeinsam aufbaut und teilt. Ihr habt die Augen, die Telefone, die Erinnerungen. Wir haben den Platz, um sie zu sammeln. Helft uns, ihn zu füllen.</p>
+    </div>
+  </section>
+
+  <!-- Auftritte 2026 -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Auftritte 2026</h2>
+        <p>Klicke auf eine Veranstaltung, um die Fotos zu durchsuchen</p>
+      </div>
+      <div class="gallery-event-grid">
+        {galleryEvents.map(ev => (
+          <a href={`${base}/de/galleria/${ev.slug}`} class="gallery-event-card">
+            <div
+              class="gallery-event-cover"
+              style={`background-image: url('${base}${ev.coverImg}')`}
+            >
+              <div class="gallery-event-overlay">
+                <span class="gallery-event-date-badge">{ev.dateLabel.slice(0, 5)}</span>
+                <div class="gallery-event-label">
+                  <h3>{ev.de.title}</h3>
+                  <p>{ev.de.place}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro-quote {
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    color: var(--color-primary, #4a3000);
+  }
+</style>

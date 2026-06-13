@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { galleryEvents } from '../../../data/gallery-events';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Galleria — Società Filarmonica di Turriaco" lang="it" currentPage="galleria">
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Galleria</h1>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container prose">
+      <p class="intro-quote"><em>Questa sezione è in costruzione. Con ogni probabilità, lo sarà sempre.</em></p>
+      <p>Una banda musicale è una cosa strana da fotografare. Chi suona ha le mani occupate. Chi sfila guarda avanti. Noi siamo fortunati ad avere qualcuno (grazie, amici!) che ci segue e ci regala scatti preziosi, ma una copertura sistematica evento per evento, soprattutto per quanto riguarda i video, è qualcosa che non riusciamo a garantire.</p>
+      <p>Ecco perché questa galleria esiste — e perché ha bisogno di voi.</p>
+      <p>Questa sezione non si alimenta da sola. Vive dei contributi di chi c'era, di chi ha scattato una foto durante una sfilata, di chi ha registrato un video con il telefonino, di chi conserva da qualche parte un ricordo di una manifestazione alla quale la Filarmonica ha partecipato.</p>
+      <p>Se avete qualcosa del genere — vecchio o recente, professionale o scattato di fretta — mandatecelo. L'indirizzo è <strong>info@bandaturriaco.it</strong>. Vi chiediamo solo due cose: indicate a quale manifestazione il materiale si riferisce e dite se volete o meno che il vostro nome compaia accanto a quello che avete mandato.</p>
+      <p>Non tutto quello che riceveremo potrà essere pubblicato, ma faremo del nostro meglio per valorizzare ogni invio.</p>
+      <p>Questa galleria vuole diventare il cuore del sito: non un archivio da guardare dal di fuori ma un luogo da costruire e condividere. Voi avete gli occhi, i telefoni, i ricordi. Noi abbiamo lo spazio per raccoglierli. Aiutateci a riempirlo.</p>
+    </div>
+  </section>
+
+  <!-- Esibizioni 2026 -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Esibizioni 2026</h2>
+        <p>Fai clic su un evento per sfogliare le foto</p>
+      </div>
+      <div class="gallery-event-grid">
+        {galleryEvents.map(ev => (
+          <a href={`${base}/it/galleria/${ev.slug}`} class="gallery-event-card">
+            <div
+              class="gallery-event-cover"
+              style={`background-image: url('${base}${ev.coverImg}')`}
+            >
+              <div class="gallery-event-overlay">
+                <span class="gallery-event-date-badge">{ev.dateLabel.slice(0, 5)}</span>
+                <div class="gallery-event-label">
+                  <h3>{ev.it.title}</h3>
+                  <p>{ev.it.place}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro-quote {
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    color: var(--color-primary, #4a3000);
+  }
+</style>

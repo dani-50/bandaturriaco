@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Gabriele Zimolo — Lebenslauf — Società Filarmonica di Turriaco" lang="de" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/de/corsi`}>← Unsere Kurse</a></p>
+      <h1>Gabriele Zimolo</h1>
+      <p class="page-header-sub">Klarinette</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_zimolo.jpg`}
+          alt="Gabriele Zimolo"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>Er begann das Klarinettenspiel im Alter von 10 Jahren an der Musikschule der Società Filarmonica di Turriaco unter der Anleitung von Flaviano Martinello, dem Lehrer, der ihn bis zu seinem Diplom begleiten sollte, das er als Privatkandidat am <em>Tartini</em>-Konservatorium in Triest im Alter von nur 19 Jahren ablegte.</p>
+      <p>Nach dem Diplom vertiefte er seine Ausbildung bei den Maestros Lucchetta, Miani und Urdan, sowohl als Solist als auch in kammermusikalischen Besetzungen wie Streichquintetten und Klarinettenensembles.</p>
+      <p>Neben Solorecitals mit Klavierbegleitung hat er mit zahlreichen regionalen Gruppen zusammengearbeitet, darunter dem Orchester der <em>Cameristi Triestini</em>, dem Blasorchester <em>Val d'Isonzo</em> (Sieger bei mehreren nationalen Wettbewerben) und vielen der örtlichen Kapellen.</p>
+      <p>Von Jugend an spielt er die Klarinette in Es-Stimmung (piccolo), besonders in reinen Klarinettenensembles wie dem <em>Claricoro</em>.</p>
+      <p>Er unterrichtet Klarinette sowie Musiktheorie und Solfège an mehreren Musikschulen in den Provinzen Görz und Udine und hatte Gelegenheit, mehrere Jugendkapellen dieser Schulen zu leiten.</p>
+      <p>Seit 2025 ist er musikalischer Leiter der Kapelle <em>Tita Michelas</em> von Fiumicello.</p>
+      <p>Neben seiner musikalischen Karriere hat er die Matura als Buchhalter und einen Masterabschluss in Informatik erworben.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

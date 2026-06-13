@@ -792,6 +792,33 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
+.footer-sostienici {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-sostienici h3 {
+    font-size: 18px;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+}
+
+.footer-sostienici p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+}
+
+.footer-cf {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+}
+
 .footer-links ul {
     list-style: none;
 }

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Fulvio Dose — Curriculum — Società Filarmonica di Turriaco" lang="it" currentPage="chisiamo">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/it/chisiamo`}>← Chi Siamo</a></p>
+      <h1>Fulvio Dose</h1>
+      <p class="page-header-sub">Direttore</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/fotodose.png`}
+          alt="Maestro Fulvio Dose"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+
+      <p>Nato a Gorizia nel 1968, ha ottenuto il diploma di clarinetto presso il Conservatorio Statale di Musica <em>G. Tartini</em> di Trieste sotto la guida del prof. Davide Teodoro, intraprendendo quindi lo studio dell'armonia e della strumentazione per banda con il maestro Pino Vatta.</p>
+      <p>Ha collaborato con formazioni cameristiche e orchestrali tra le quali l'<em>Orchestra da Camera</em> del FVG, l'<em>Alpe Adria Consort</em> e l'Accademia Regionale <em>Serenade Ensemble</em>, registrando musiche del Novecento edite dalla casa discografica <em>Ars Nova</em>.</p>
+      <p>Ha partecipato a masterclass di perfezionamento con G. Garbarino, G. Brezigar, R. Guiot e A. Carbonare. Ha frequentato corsi e masterclass di direzione con i maestri D. Carnevali, J. Van der Roost, D. Bostock, H. Mertens, F. Ferran. Ha avuto il piacere di collaborare con solisti di fama internazionale quali G. Cassone, M. Pierobon, F.P. Tedesco, M. Miani, M. Maur, F. Paoletti, nonché con il festival <em>MID Europe</em> di Schladming e gli <em>Innsbrucker Promenadenkonzerte</em> (A), e l'<em>Upol Orkesterkamp</em> (SLO).</p>
+      <p>Ha stabilmente diretto la Filarmonica di Colloredo di Prato, la Civica Orchestra Fiati <em>G. Verdi</em> di Trieste, la banda della Società Filarmonica <em>G. Verdi</em> di Ronchi dei Legionari (GO); ha collaborato con la Fondazione Teatro Lirico <em>G. Verdi</em> di Trieste in qualità di maestro della banda negli allestimenti di opere liriche.</p>
+      <p>È stato direttore ospite della Belluno Wind Band, della Nuova Banda Comunale <em>Santa Cecilia</em> di Precenicco, della banda provinciale ANBIMA di Gorizia, della banda giovanile <em>Upol Orkesterkamp</em> di Portorose (SLO).</p>
+      <p>Ha fondato l'Associazione Culturale Musicale <em>Val d'Isonzo</em> della quale è tuttora presidente e direttore artistico. Dirige dal 2011 il Corpo Bandistico Comunale <em>G. Rossini</em> di Castions di Strada (UD).</p>
+      <p>È direttore artistico del concorso musicale internazionale MusiCup — bande giovanili in concorso, organizzato dal Corpo bandistico comunale <em>G. Rossini</em> di Castions di Strada. Numerosi sono i riconoscimenti ottenuti ai concorsi musicali internazionali, sia con formazioni giovanili sia con bande di categoria (dalla terza categoria all'eccellenza).</p>
+      <p>Con le bande da lui dirette ha partecipato negli anni al concorso internazionale di Bertiolo, al <em>Flicorno d'oro</em> di Riva del Garda, al concorso di Bosel (Germania), alla <em>Bacchetta d'oro</em> di Fiuggi, al concorso bande giovanili di Talamona (SO), al <em>Giovani in concorso</em> di Costa Volpino (BG), al concorso per bande giovanili a Corno di Rosazzo, ottenendo ottimi risultati, e in molte occasioni ha ricevuto il riconoscimento come miglior direttore.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Stefano Trentin — Lebenslauf — Società Filarmonica di Turriaco" lang="de" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/de/corsi`}>← Unsere Kurse</a></p>
+      <h1>Stefano Trentin</h1>
+      <p class="page-header-sub">Trompete</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_stefano.jpg`}
+          alt="Stefano Trentin"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>Er begann seine musikalische Ausbildung im Alter von 6 Jahren an der Musikschule der Kapelle <em>Tita Michelas</em> in Fiumicello unter der Anleitung von Maestro Gino Comisso, der ihm die Begeisterung für die Trompete vermittelte. Anschließend setzte er sein Studium bei den Maestros Gabriele Boscarato, Federico Biondi und Loris Beltrame fort, stets innerhalb derselben Musikschule.</p>
+      <p>Von 2020 bis 2025 nahm er an der Nationalen Jugend-Sinfoniekapelle teil, die von ANBIMA gefördert wird.</p>
+      <p>Im Jahr 2023 begann er sein Studium am Konservatorium <em>Jacopo Tomadini</em> in Udine unter der Leitung von Maestro Carlo Beltrami und nahm gleichzeitig an verschiedenen Fortbildungs-Meisterkursen auf europäischer und außereuropäischer Ebene teil, wie der <em>Italian Brass Week</em> oder dem <em>Music System Italy/Japan</em>, mit international renommierten Dozenten wie: Andrea Dell'Ira, Andrea Tofanelli, Rex Richardson, Omar Tomasoni, Ottaviano Cristofoli, Francisco „Pacho" Flores, Jens Lindemann, Piergiuseppe Doldi, Marco Pierobon, Jure Gradišnik und Bertold Stecher.</p>
+      <p>Er arbeitet mit dem Orchester <em>Dolomiti Symphonie</em>, dem Orchester Opera Prima Wien, dem Orchester <em>Fil(m)armonica</em> di Mossa und dem Blasorchester <em>Val Isonzo</em> zusammen und leistet außerdem regelmäßigen Dienst bei den Produktionen des Konservatoriums selbst, wie bei der Oper <em>Gianni Schicchi</em> von Giacomo Puccini, die beim Mittelfest 2024 aufgeführt wurde.</p>
+      <p>Im Jahr 2024 nahm er an der EYBB (<em>European Youth Brass Band</em>) teil, die von der EBBA (<em>European Brass Band Association</em>) bei den Europäischen Brass-Band-Meisterschaften in Palanga (Litauen) ausgerichtet wurde, wo er die Rolle des Solokornettspielers übernahm.</p>
+      <p>Er unterrichtet an mehreren Musikschulen der Blaskapellen: <em>Tita Michelas</em> in Fiumicello, <em>Società Filarmonica</em> di Turriaco, <em>Gioacchino Rossini</em> in Castions di Strada, und nimmt jährlich am Projekt Band@scuola teil, in dessen Rahmen er Grundschulkindern Blechblasinstrumente beibringt.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Gabriele Zimolo — Curriculum — Società Filarmonica di Turriaco" lang="en" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/en/corsi`}>← Our Courses</a></p>
+      <h1>Gabriele Zimolo</h1>
+      <p class="page-header-sub">Clarinet</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_zimolo.jpg`}
+          alt="Gabriele Zimolo"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>He took up clarinet studies at the age of 10 at the Music School of the Società Filarmonica di Turriaco under the guidance of Flaviano Martinello, the teacher who would accompany him all the way to his diploma, which he obtained as a private candidate at the <em>Tartini</em> Conservatory in Trieste at just 19 years of age.</p>
+      <p>After graduating, he furthered his training with Maestros Lucchetta, Miani and Urdan, both as a soloist and in chamber ensembles such as string quintets and clarinet groups.</p>
+      <p>In addition to solo recitals with piano accompaniment, he has collaborated with numerous regional groups, including the <em>Cameristi Triestini</em> orchestra, the <em>Val d'Isonzo</em> wind orchestra (winner of several national competitions) and many of the local bands.</p>
+      <p>From an early age he has played the E-flat piccolo clarinet, especially in clarinet-only ensembles such as the <em>Claricoro</em>.</p>
+      <p>He teaches clarinet, music theory and solfège at several music schools in the provinces of Gorizia and Udine, and has had the opportunity to conduct several youth bands at these schools.</p>
+      <p>Since 2025 he has been musical director of the <em>Tita Michelas</em> band of Fiumicello.</p>
+      <p>Alongside his musical career, he holds a Diploma in Accountancy and a Master's degree in Computer Science.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

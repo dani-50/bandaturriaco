@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Daniele Furlan — Curriculum — Società Filarmonica di Turriaco" lang="it" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/it/corsi`}>← I Nostri Corsi</a></p>
+      <h1>Daniele Furlan</h1>
+      <p class="page-header-sub">Batteria e percussioni</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_furlan.jpg`}
+          alt="Daniele Furlan"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>All'età di otto anni si avvicina allo studio della batteria, seguito dal maestro Albino Ghini. Dal 1995 al 2002 prosegue la formazione con il maestro Paolo Muscovi, approfondendo tecnica, lettura ritmica e approccio allo strumento in chiave moderna.</p>
+      <p>Ha partecipato a seminari e <em>clinic</em> con grandi maestri come Simon Phillips, Peter Erskine, Alfredo Golino e molti altri. Nel 2009 è stato allievo effettivo al corso tenuto dal leggendario batterista americano Bernard Purdie (James Brown, Aretha Franklin).</p>
+      <p>È attivamente impegnato nell'attività concertistica con formazioni che spaziano dalla musica jazz al funk fino alla musica balcanica, maturando un'esperienza di repertorio in contesti diversi e stimolanti.</p>
+      <p>Parallelamente coltiva da oltre vent'anni un'intensa attività didattica nelle scuole di musica della provincia di Gorizia e Udine, con particolare attenzione ai bambini più piccoli e ai ragazzi con difficoltà o bisogni educativi speciali.</p>
+      <p>Ogni anno realizza numerosi corsi di gruppo nelle scuole primarie della provincia di Gorizia, con l'obiettivo di avvicinare i più giovani al mondo delle percussioni in modo spensierato, coinvolgente e creativo.</p>
+      <p>I corsi sono pensati con un approccio giocoso allo strumento, per introdurre i bambini alla musica in maniera divertente, stimolante e senza pressioni, favorendo l'ascolto, la coordinazione e il lavoro di gruppo fin dai primi passi nel mondo musicale.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

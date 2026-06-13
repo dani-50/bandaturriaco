@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Fulvio Dose — Curriculum — Società Filarmonica di Turriaco" lang="en" currentPage="chisiamo">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/en/chisiamo`}>← About Us</a></p>
+      <h1>Fulvio Dose</h1>
+      <p class="page-header-sub">Conductor</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/fotodose.png`}
+          alt="Maestro Fulvio Dose"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+
+      <p>Born in Gorizia in 1968, he graduated in clarinet at the State Conservatory of Music <em>G. Tartini</em> in Trieste under Professor Davide Teodoro, subsequently studying harmony and band instrumentation with Maestro Pino Vatta.</p>
+      <p>He has collaborated with chamber and orchestral ensembles including the <em>Orchestra da Camera</em> of Friuli Venezia Giulia, the <em>Alpe Adria Consort</em> and the <em>Serenade Ensemble</em> Regional Academy, recording twentieth-century music released by the <em>Ars Nova</em> record label.</p>
+      <p>He has taken part in masterclasses with G. Garbarino, G. Brezigar, R. Guiot and A. Carbonare, and attended conducting courses and masterclasses with Maestros D. Carnevali, J. Van der Roost, D. Bostock, H. Mertens and F. Ferran. He has had the pleasure of collaborating with internationally acclaimed soloists such as G. Cassone, M. Pierobon, F.P. Tedesco, M. Miani, M. Maur and F. Paoletti, as well as with the <em>MID Europe</em> festival in Schladming and the <em>Innsbrucker Promenadenkonzerte</em> (Austria), and the <em>Upol Orkesterkamp</em> (Slovenia).</p>
+      <p>He has held permanent directorships with the Filarmonica di Colloredo di Prato, the Civic Wind Orchestra <em>G. Verdi</em> of Trieste, and the band of the Società Filarmonica <em>G. Verdi</em> of Ronchi dei Legionari (GO); he has also collaborated with the <em>G. Verdi</em> Lyric Theatre Foundation of Trieste as band director in opera productions.</p>
+      <p>He has been guest conductor of the Belluno Wind Band, the Nuova Banda Comunale <em>Santa Cecilia</em> of Precenicco, the ANBIMA provincial band of Gorizia, and the youth band <em>Upol Orkesterkamp</em> of Portorož (Slovenia).</p>
+      <p>He founded the <em>Val d'Isonzo</em> Musical and Cultural Association, of which he remains president and artistic director. Since 2011 he has conducted the Municipal Wind Band <em>G. Rossini</em> of Castions di Strada (UD).</p>
+      <p>He is artistic director of the international music competition MusiCup — youth bands in competition, organised by the Municipal Wind Band <em>G. Rossini</em> of Castions di Strada. He has received numerous awards at international music competitions, both with youth ensembles and with senior-category bands (from third category to excellence).</p>
+      <p>With the bands he has directed, he has taken part over the years in the international competition of Bertiolo, the <em>Flicorno d'oro</em> of Riva del Garda, the competition in Bosel (Germany), the <em>Bacchetta d'oro</em> of Fiuggi, the youth band competition of Talamona (SO), the <em>Giovani in concorso</em> of Costa Volpino (BG), and the youth band competition in Corno di Rosazzo — achieving excellent results and on many occasions receiving recognition as best conductor.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

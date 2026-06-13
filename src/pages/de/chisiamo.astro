@@ -14,26 +14,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="section">
     <div class="container prose">
       <p class="intro-quote">
-        <em>Das einzige Blasorchester der Provinz Görz, das seine Tätigkeit über drei Jahrhunderte hinweg ununterbrochen fortgeführt hat, gehört zu den traditionsreichsten Ensembles im gesamten Friaul-Julisch Venetien.</em>
+        <em>Mit einer ununterbrochenen Tätigkeit, die drei Jahrhunderte Geschichte umspannt, ist die Società Filarmonica di Turriaco eines der verwurzeltsten und traditionsreichsten Blasorchester im gesamten Friaul-Julisch Venetien.</em>
       </p>
 
       <p>Die erste &ldquo;banda di Turriaco&rdquo; wurde 1870 auf Initiative einer kleinen Gruppe örtlicher Musikliebhaber gegründet.</p>
 
-      <p>Ihre ersten Schritte unternahm sie unter der Leitung von Maestro Guglielmo Szubert und wurde im Dezember 1900 offiziell als &ldquo;Società Filarmonica di Turriaco&rdquo; gegründet. Nach verschiedenen Wechselfällen — darunter eine interne Spaltung, die zu Beginn des Jahrhunderts zur Koexistenz zweier eigenständiger Kapellen führte — fand sie 1920 ihre endgültige Form und behielt diese bis M&auml;rz 2017, als sie durch einstimmigen Beschluss der Mitgliederversammlung in eine Vereinigung zur sozialen Förderung (APS) umgewandelt wurde.</p>
+      <p>Ihre ersten Schritte unternahm sie unter der Leitung von Maestro Guglielmo Szubert und wurde im Dezember 1900 offiziell als <em>Società Filarmonica di Turriaco</em> gegründet. Nach verschiedenen Wechselfällen — darunter eine interne Spaltung, die zu Beginn des Jahrhunderts zur Koexistenz zweier eigenständiger Kapellen führte — fand sie 1920 ihre endgültige Form und behielt diese bis M&auml;rz 2017, als sie durch einstimmigen Beschluss der Mitgliederversammlung in eine Vereinigung zur sozialen Förderung (APS) umgewandelt wurde.</p>
 
       <p>Als Zeuge der historischen Entwicklung, die die Isonzo-Gebiete von habsburgischem Territorium zu einem integralen Bestandteil des italienischen Staates wandelte, stellt das Ensemble ein außergewöhnliches <em>trait d'union</em> zwischen den neuesten musikalischen Tendenzen und den Rhythmen und Klängen der mitteleuropäischen Kultur dar.</p>
 
       <p>Das Ensemble besteht derzeit aus rund dreißig aktiven Mitgliedern, zu denen sich je nach Gelegenheit weitere Freunde gesellen, die gemeinsam mit uns musizieren möchten.</p>
 
       <p>In ihrer organisatorischen und administrativen Verwaltung eigenständig, wird die Gesellschaft von einem Vorstand geleitet, der von der Mitgliederversammlung gewählt wird.</p>
-
-      <figure style="margin: 40px 0; text-align: center;">
+    </div>
+    <div class="container">
+      <figure class="banda-photo">
         <img
           src={`${base}/asset/images/fotobanda.jpg`}
           alt="Gruppenfoto — Società Filarmonica di Turriaco"
-          style="max-width: 100%; height: auto; border-radius: 4px;"
         />
-        <figcaption style="text-align: center; font-size: 14px; color: var(--color-text-light, #888); font-style: italic; margin-top: 8px;">Die Kapelle Turriaco beim Weihnachtskonzert 2025</figcaption>
+        <figcaption>Die Kapelle Turriaco beim Weihnachtskonzert 2025</figcaption>
       </figure>
     </div>
   </section>
@@ -64,25 +64,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="section-header">     
         <h2>Der Dirigent</h2>
         </div>
-        <p>Die Società Filarmonica wird derzeit von Maestro <strong>Fulvio Dose</strong> geleitet, der das Ensemble mit Leidenschaft und Kompetenz führt, die Verbindung zur Tradition lebendig hält und gleichzeitig die Innovation im Repertoire fördert.</p>
-
-        <div style="display: flex; justify-content: center; margin: 32px 0 24px;">
-          <img
-            src={`${base}/asset/images/fotodose.png`}
-            alt="Maestro Fulvio Dose"
-            style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
-          />
+        <p>Die Società Filarmonica wird derzeit von Maestro <strong>Fulvio Dose</strong> geleitet, der das Ensemble mit Leidenschaft und Kompetenz führt, die Verbindung zur Tradition lebendig hält und gleichzeitig die Innovation im Repertoire fördert. (Klicken Sie auf den Namen, um den Lebenslauf anzuzeigen.)</p>
+        <div style="display: flex; justify-content: center; margin-top: 16px;">
+          <div style="text-align: center; width: 160px;">
+            <img src={`${base}/asset/images/fotodose.png`} alt="Maestro Fulvio Dose" style="width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 2px solid var(--color-secondary);" />
+            <a href={`${base}/de/curriculum/dose`} title="Lebenslauf — Fulvio Dose" style="font-size: 14px; color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body);">Fulvio Dose</a>
+          </div>
         </div>
-
-        <h3>Fulvio Dose</h3>
-        <p>Er wurde 1968 in Gorizia geboren und schloss sein Klarinettenexamen am Staatlichen Konservatorium für Musik <em>G. Tartini</em> in Triest unter der Leitung von Prof. Davide Teodoro ab. Anschließend studierte er Harmonielehre und Instrumentation für Blasorchester bei Maestro Pino Vatta.</p>
-        <p>Er hat mit Kammer- und Orchesterformationen zusammengearbeitet, darunter dem <em>Orchestra da Camera</em> des Friaul-Julisch Venetien, dem <em>Alpe Adria Consort</em> und der <em>Serenade Ensemble</em> Regional Academy, und dabei Musik des 20. Jahrhunderts für das Plattenlabel <em>Ars Nova</em> aufgenommen.</p>
-        <p>Er nahm an Meisterkursen mit G. Garbarino, G. Brezigar, R. Guiot und A. Carbonare teil und besuchte Dirigierkurse und Meisterkurse bei den Maestros D. Carnevali, J. Van der Roost, D. Bostock, H. Mertens und F. Ferran. Er hatte das Vergnügen, mit international renommierten Solisten wie G. Cassone, M. Pierobon, F.P. Tedesco, M. Miani, M. Maur und F. Paoletti zusammenzuarbeiten sowie mit dem Festival <em>MID Europe</em> in Schladming, den <em>Innsbrucker Promenadenkonzerten</em> (Österreich) und dem <em>Upol Orkesterkamp</em> (Slowenien).</p>
-        <p>Er hat dauerhaft die Filarmonica di Colloredo di Prato, das Städtische Blasorchester <em>G. Verdi</em> in Triest und die Kapelle der Società Filarmonica <em>G. Verdi</em> in Ronchi dei Legionari (GO) geleitet; außerdem hat er mit der <em>G. Verdi</em> Lyrischen Theaterstiftung Triest als Kapellmeister bei Operninszenierungen zusammengearbeitet.</p>
-        <p>Er war Gastdirigent der Belluno Wind Band, der Nuova Banda Comunale <em>Santa Cecilia</em> von Precenicco, der ANBIMA-Provinzkapelle Gorizia und der Jugendkapelle <em>Upol Orkesterkamp</em> von Portorož (Slowenien).</p>
-        <p>Er gründete den Musikkulturverein <em>Val d'Isonzo</em>, dessen Präsident und künstlerischer Leiter er nach wie vor ist. Seit 2011 leitet er das Städtische Blasorchester <em>G. Rossini</em> in Castions di Strada (UD).</p>
-        <p>Er ist künstlerischer Leiter des internationalen Musikwettbewerbs MusiCup — Jugendblasorchester im Wettbewerb, der vom Städtischen Blasorchester <em>G. Rossini</em> in Castions di Strada organisiert wird. Er hat zahlreiche Auszeichnungen bei internationalen Musikwettbewerben erhalten, sowohl mit Jugendformationen als auch mit Kapellen verschiedener Kategorien (von der dritten Kategorie bis zur Exzellenz).</p>
-        <p>Mit den von ihm geleiteten Kapellen hat er im Laufe der Jahre am internationalen Wettbewerb von Bertiolo, am <em>Flicorno d'oro</em> in Riva del Garda, am Wettbewerb in Bosel (Deutschland), an der <em>Bacchetta d'oro</em> in Fiuggi, am Jugendblasorchester-Wettbewerb von Talamona (SO), an <em>Giovani in concorso</em> in Costa Volpino (BG) und am Jugendblasorchester-Wettbewerb in Corno di Rosazzo teilgenommen — mit hervorragenden Ergebnissen und wurde auf viele Gelegenheiten als bester Dirigent ausgezeichnet.</p>
     </div>
   </section>
 
@@ -146,7 +134,33 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     line-height: 1.7;
     color: var(--color-primary, #4a3000);
   }
-  .photo-placeholder {
+  .banda-photo {
+    margin: 0 auto 0;
+    text-align: center;
+  }
+  .banda-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    display: block;
+  }
+  .banda-photo figcaption {
+    margin-top: 12px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--color-text-light, #888);
+  }
+  .curriculum-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--color-secondary, #8b6f47);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .curriculum-link:hover {
+    text-decoration: underline;
+  }
     border: 2px dashed var(--color-border, #ccc);
     border-radius: 8px;
     padding: 3rem 1rem;

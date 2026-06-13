@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Daniele Furlan — Curriculum — Società Filarmonica di Turriaco" lang="en" currentPage="corsi">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/en/corsi`}>← Our Courses</a></p>
+      <h1>Daniele Furlan</h1>
+      <p class="page-header-sub">Drums and percussion</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/tondo_furlan.jpg`}
+          alt="Daniele Furlan"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+      <p>At the age of eight he began studying drums, under the guidance of Maestro Albino Ghini. From 1995 to 2002 he continued his training with Maestro Paolo Muscovi, deepening his technique, rhythmic reading and approach to the instrument in a modern key.</p>
+      <p>He has taken part in seminars and clinics with great masters such as Simon Phillips, Peter Erskine, Alfredo Golino and many others. In 2009 he was a full student at the course held by the legendary American drummer Bernard Purdie (James Brown, Aretha Franklin).</p>
+      <p>He is actively involved in concert activities with ensembles ranging from jazz to funk to Balkan music, building up a wide repertoire experience in varied and stimulating contexts.</p>
+      <p>Alongside this, for over twenty years he has maintained an intense teaching activity in music schools in the provinces of Gorizia and Udine, with particular attention to younger children and students with difficulties or special educational needs.</p>
+      <p>Each year he runs numerous group courses in primary schools in the province of Gorizia, with the aim of introducing young people to the world of percussion in a carefree, engaging and creative way.</p>
+      <p>The courses are designed with a playful approach to the instrument, to introduce children to music in a fun, stimulating and pressure-free way, fostering listening, coordination and group work from the very first steps in the musical world.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Fulvio Dose — Lebenslauf — Società Filarmonica di Turriaco" lang="de" currentPage="chisiamo">
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header-back"><a href={`${base}/de/chisiamo`}>← Über uns</a></p>
+      <h1>Fulvio Dose</h1>
+      <p class="page-header-sub">Dirigent</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <div style="display: flex; justify-content: center; margin: 0 0 40px;">
+        <img
+          src={`${base}/asset/images/fotodose.png`}
+          alt="Maestro Fulvio Dose"
+          style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-secondary, #8b6f47);"
+        />
+      </div>
+
+      <p>Er wurde 1968 in Gorizia geboren und schloss sein Klarinettenexamen am Staatlichen Konservatorium für Musik <em>G. Tartini</em> in Triest unter der Leitung von Prof. Davide Teodoro ab. Anschließend studierte er Harmonielehre und Instrumentation für Blasorchester bei Maestro Pino Vatta.</p>
+      <p>Er hat mit Kammer- und Orchesterformationen zusammengearbeitet, darunter dem <em>Orchestra da Camera</em> des Friaul-Julisch Venetien, dem <em>Alpe Adria Consort</em> und der <em>Serenade Ensemble</em> Regional Academy, und dabei Musik des 20. Jahrhunderts für das Plattenlabel <em>Ars Nova</em> aufgenommen.</p>
+      <p>Er nahm an Meisterkursen mit G. Garbarino, G. Brezigar, R. Guiot und A. Carbonare teil und besuchte Dirigierkurse und Meisterkurse bei den Maestros D. Carnevali, J. Van der Roost, D. Bostock, H. Mertens und F. Ferran. Er hatte das Vergnügen, mit international renommierten Solisten wie G. Cassone, M. Pierobon, F.P. Tedesco, M. Miani, M. Maur und F. Paoletti zusammenzuarbeiten sowie mit dem Festival <em>MID Europe</em> in Schladming, den <em>Innsbrucker Promenadenkonzerten</em> (Österreich) und dem <em>Upol Orkesterkamp</em> (Slowenien).</p>
+      <p>Er hat dauerhaft die Filarmonica di Colloredo di Prato, das Städtische Blasorchester <em>G. Verdi</em> in Triest und die Kapelle der Società Filarmonica <em>G. Verdi</em> in Ronchi dei Legionari (GO) geleitet; außerdem hat er mit der <em>G. Verdi</em> Lyrischen Theaterstiftung Triest als Kapellmeister bei Operninszenierungen zusammengearbeitet.</p>
+      <p>Er war Gastdirigent der Belluno Wind Band, der Nuova Banda Comunale <em>Santa Cecilia</em> von Precenicco, der ANBIMA-Provinzkapelle Gorizia und der Jugendkapelle <em>Upol Orkesterkamp</em> von Portorož (Slowenien).</p>
+      <p>Er gründete den Musikkulturverein <em>Val d'Isonzo</em>, dessen Präsident und künstlerischer Leiter er nach wie vor ist. Seit 2011 leitet er das Städtische Blasorchester <em>G. Rossini</em> in Castions di Strada (UD).</p>
+      <p>Er ist künstlerischer Leiter des internationalen Musikwettbewerbs MusiCup — Jugendblasorchester im Wettbewerb, der vom Städtischen Blasorchester <em>G. Rossini</em> in Castions di Strada organisiert wird. Er hat zahlreiche Auszeichnungen bei internationalen Musikwettbewerben erhalten, sowohl mit Jugendformationen als auch mit Kapellen verschiedener Kategorien (von der dritten Kategorie bis zur Exzellenz).</p>
+      <p>Mit den von ihm geleiteten Kapellen hat er im Laufe der Jahre am internationalen Wettbewerb von Bertiolo, am <em>Flicorno d'oro</em> in Riva del Garda, am Wettbewerb in Bosel (Deutschland), an der <em>Bacchetta d'oro</em> in Fiuggi, am Jugendblasorchester-Wettbewerb von Talamona (SO), an <em>Giovani in concorso</em> in Costa Volpino (BG) und am Jugendblasorchester-Wettbewerb in Corno di Rosazzo teilgenommen — mit hervorragenden Ergebnissen und wurde auf viele Gelegenheiten als bester Dirigent ausgezeichnet.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header-back {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  .page-header-back a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .page-header-back a:hover {
+    text-decoration: underline;
+  }
+  .page-header-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>
