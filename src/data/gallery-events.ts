@@ -84,6 +84,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'image', src: '/asset/gallery/pasqua/pasqua7.jpg' },
       { type: 'image', src: '/asset/gallery/pasqua/pasqua8.jpg' },
       { type: 'image', src: '/asset/gallery/pasqua/pasqua9.jpg' },
+      { type: 'video', src: '/asset/gallery/pasqua/pasqua10.mp4' },
     ],
   },
   {
