@@ -33,7 +33,6 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'image', src: '/asset/gallery/beneficenza/foto15.jpeg' }, 
       { type: 'image', src: '/asset/gallery/beneficenza/foto3.jpeg' },
       { type: 'image', src: '/asset/gallery/beneficenza/foto7.jpeg' },
-      { type: 'video', src: '/asset/gallery/beneficenza/video3.mp4' }, 
       { type: 'image', src: '/asset/gallery/beneficenza/foto4.jpeg' },
       { type: 'image', src: '/asset/gallery/beneficenza/foto8.jpeg' },
       { type: 'video', src: '/asset/gallery/beneficenza/video6.mp4' },
