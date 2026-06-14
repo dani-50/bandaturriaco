@@ -1,15 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { execSync } from 'child_process';
+import { getCollection } from 'astro:content';
 
-let lastCommitDate = '';
-try {
-  lastCommitDate = execSync('git log -1 --date=format:"%d/%m/%Y" --format="%ad"').toString().trim();
-} catch {
-  lastCommitDate = '';
-}
+const posts = (await getCollection('news-de'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const renderedPosts = await Promise.all(
+  posts.map(async (post) => ({
+    data: post.data,
+    Content: (await post.render()).Content,
+  }))
+);
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('de-DE', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+
+function isoDate(date: Date): string {
+  return date.toISOString().substring(0, 10);
+}
 ---
 
 <BaseLayout title="Neuigkeiten — Società Filarmonica di Turriaco" lang="de" currentPage="novita">
@@ -22,66 +37,58 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="section">
     <div class="container prose">
 
-      <p class="last-updated">
-        <em>Seite zuletzt aktualisiert am <strong>{lastCommitDate}</strong></em>
-      </p>
-
-      <p>
-        Am Samstag, dem 13. Juni, um 20:30 Uhr, auf dem Gelände neben dem Gemeindehaus (bei schlechtem Wetter: im PalaMarson)
-        gibt die Kapelle der Società Filarmonica di Turriaco ein Benefizkonzert zugunsten des Vereins La Melagrana,
-        einer Sozialgenossenschaft, die durch Initiativen wie das kürzlich in Monfalcone eröffnete Restaurant-Pizzeria
-        &ldquo;AUTstanding&rdquo; Würde, Autonomie und Beschäftigungsmöglichkeiten für Menschen mit einer
-        Autismus-Spektrum-Diagnose zurückgeben möchte.
-      </p>
-
-      <p>
-        Das Konzert am Samstag entstand aus dem jahrelangen Engagement der Filarmonica di Turriaco gegenüber der lokalen
-        Gemeinschaft, die Musik nicht nur als künstlerischen Ausdruck, sondern als Instrument des Zusammenhalts und der
-        staatsbürgerlichen Verantwortung betrachtet.
-      </p>
-
-      <p>
-        Für den Abend wird das Turriacher Ensemble, geleitet von Maestro Fulvio Dose, in einer langjährigen Zusammenarbeit
-        von der Kapelle Tita Michelas aus Fiumicello begleitet, deren Maestro Gabriele Zimolo sich mit m. Dose in der
-        Leitung der Programmstücke abwechseln wird.
-      </p>
-
-      <p>
-        Das Abendrepertoire wird ausschließlich der britischen Musik gewidmet sein und Stücke des Inselfolklore,
-        klassische Werke sowie Arrangements von Popmusik umfassen.
-      </p>
-
-      <p>
-        Die Veranstaltung ist Teil der achtzehnten Ausgabe von <em>Note di Costituzione</em>, der Veranstaltungsreihe,
-        die seit dem 10. April das Gebiet mit einem reichhaltigen Veranstaltungskalender belebt hat, und wird Anlass für
-        die Präsentation der neuen Website sein, mit der die Società Filarmonica ihre Aktivitäten und Geschichte vorstellt.
-      </p>
-
-      <p>
-        Der Eintritt ist gegen freiwillige Spende. Die Gemeinschaft ist eingeladen teilzunehmen und einen konkreten Beitrag
-        an jene zu leisten, die glauben, dass Inklusion durch Arbeit der wahrhaftigste Weg zur Autonomie und Selbstachtung ist.
-      </p>
-
-      <figure class="news-figure">
-        <img
-          src={`${base}/asset/images/fotoprove1.jpg`}
-          alt="Proben für das Konzert am Samstag, dem 13. Juni"
-          style="max-width: 100%; border-radius: 8px;"
-        />
-        <figcaption>Proben für das Konzert am Samstag, dem 13. Juni</figcaption>
-      </figure>
+      {renderedPosts.map(({ data, Content }) => (
+        <article class="news-post">
+          <header class="news-post-header">
+            <h2 class="news-post-title">{data.title}</h2>
+            <time class="news-post-date" datetime={isoDate(data.date)}>
+              {formatDate(data.date)}
+            </time>
+          </header>
+          <div class="news-post-body">
+            <Content />
+            {data.image && (
+              <figure class="news-figure">
+                <img
+                  src={`${base}${data.image}`}
+                  alt={data.imageAlt ?? ''}
+                  style="max-width: 100%; border-radius: 8px;"
+                />
+                {data.imageCaption && (
+                  <figcaption>{data.imageCaption}</figcaption>
+                )}
+              </figure>
+            )}
+          </div>
+        </article>
+      ))}
 
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .last-updated {
-    font-size: 0.9rem;
-    color: var(--color-text-muted, #888);
-    margin-bottom: 2rem;
+  .news-post {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
     border-bottom: 1px solid var(--color-border, #e0e0e0);
-    padding-bottom: 0.75rem;
+  }
+  .news-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .news-post-header {
+    margin-bottom: 1.5rem;
+  }
+  .news-post-title {
+    margin-bottom: 0.35rem;
+  }
+  .news-post-date {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--color-text-muted, #888);
+    font-style: italic;
   }
   .news-figure {
     margin: 2.5rem 0 0;

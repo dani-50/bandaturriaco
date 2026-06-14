@@ -1,15 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { execSync } from 'child_process';
+import { getCollection } from 'astro:content';
 
-let lastCommitDate = '';
-try {
-  lastCommitDate = execSync('git log -1 --date=format:"%d/%m/%Y" --format="%ad"').toString().trim();
-} catch {
-  lastCommitDate = '';
-}
+const posts = (await getCollection('news-it'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const renderedPosts = await Promise.all(
+  posts.map(async (post) => ({
+    data: post.data,
+    Content: (await post.render()).Content,
+  }))
+);
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+
+function isoDate(date: Date): string {
+  return date.toISOString().substring(0, 10);
+}
 ---
 
 <BaseLayout title="Novità — Società Filarmonica di Turriaco" lang="it" currentPage="novita">
@@ -22,66 +37,58 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="section">
     <div class="container prose">
 
-      <p class="last-updated">
-        <em>Pagina aggiornata l'ultima volta il <strong>{lastCommitDate}</strong></em>
-      </p>
-
-      <p>
-        Sabato 13 giugno, alle ore 20:30, negli spazi adiacenti la sede comunale (in caso di cattivo tempo: presso il PalaMarson)
-        la banda della Società Filarmonica di Turriaco sarà protagonista di un concerto di beneficenza a favore dell'associazione
-        La Melagrana, cooperativa sociale che, attraverso iniziative come il ristorante-pizzeria &ldquo;AUTstanding&rdquo;
-        recentemente inaugurato a Monfalcone, si propone di restituire dignità, autonomia e possibilità occupazionali a
-        persone con diagnosi di spettro autistico.
-      </p>
-
-      <p>
-        Il concerto di sabato nasce dall'impegno che la Filarmonica di Turriaco porta avanti da anni nei confronti della comunità
-        locale e che vede la musica non solo come espressione artistica ma come strumento di coesione e responsabilità civile.
-      </p>
-
-      <p>
-        Per la serata, la formazione turriachese, diretta dal maestro Fulvio Dose, avrà al proprio fianco, in una collaborazione
-        che continua da tempo, la banda Tita Michelas di Fiumicello, il cui maestro Gabriele Zimolo si alternerà con il m. Dose
-        nella conduzione dei brani in programma.
-      </p>
-
-      <p>
-        Il repertorio della serata sarà interamente dedicato alla musica britannica e spazierà tra brani del folclore delle isole,
-        pagine classiche e arrangiamenti di musica pop.
-      </p>
-
-      <p>
-        La serata si inserisce all'interno della diciottesima edizione di <em>Note di Costituzione</em>, la manifestazione che
-        dal 10 aprile ha animato il territorio con un ricco calendario di eventi che hanno coinvolto le associazioni locali,
-        e costituirà l'occasione per la presentazione del nuovo sito Web con cui la Società Filarmonica illustra la propria
-        attività e la propria storia.
-      </p>
-
-      <p>
-        L'ingresso sarà a offerta libera. La comunità è invitata a partecipare dando un contributo concreto a coloro che
-        credono che l'inclusione attraverso il lavoro sia la strada più vera verso l'autonomia e il rispetto di sé.
-      </p>
-
-      <figure class="news-figure">
-        <img
-          src={`${base}/asset/images/fotoprove1.jpg`}
-          alt="Prove per il concerto del prossimo sabato 13 giugno"
-          style="max-width: 100%; border-radius: 8px;"
-        />
-        <figcaption>Prove per il concerto del prossimo sabato 13 giugno</figcaption>
-      </figure>
+      {renderedPosts.map(({ data, Content }) => (
+        <article class="news-post">
+          <header class="news-post-header">
+            <h2 class="news-post-title">{data.title}</h2>
+            <time class="news-post-date" datetime={isoDate(data.date)}>
+              {formatDate(data.date)}
+            </time>
+          </header>
+          <div class="news-post-body">
+            <Content />
+            {data.image && (
+              <figure class="news-figure">
+                <img
+                  src={`${base}${data.image}`}
+                  alt={data.imageAlt ?? ''}
+                  style="max-width: 100%; border-radius: 8px;"
+                />
+                {data.imageCaption && (
+                  <figcaption>{data.imageCaption}</figcaption>
+                )}
+              </figure>
+            )}
+          </div>
+        </article>
+      ))}
 
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .last-updated {
-    font-size: 0.9rem;
-    color: var(--color-text-muted, #888);
-    margin-bottom: 2rem;
+  .news-post {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
     border-bottom: 1px solid var(--color-border, #e0e0e0);
-    padding-bottom: 0.75rem;
+  }
+  .news-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .news-post-header {
+    margin-bottom: 1.5rem;
+  }
+  .news-post-title {
+    margin-bottom: 0.35rem;
+  }
+  .news-post-date {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--color-text-muted, #888);
+    font-style: italic;
   }
   .news-figure {
     margin: 2.5rem 0 0;
