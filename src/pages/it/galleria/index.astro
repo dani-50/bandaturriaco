@@ -2,6 +2,8 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { galleryEvents } from '../../../data/gallery-events';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const events2026 = galleryEvents.filter(ev => ev.dateLabel.endsWith('2026'));
+const eventsPrevious = galleryEvents.filter(ev => !ev.dateLabel.endsWith('2026'));
 ---
 
 <BaseLayout title="Galleria — Società Filarmonica di Turriaco" lang="it" currentPage="galleria">
@@ -33,7 +35,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <p>Fai clic su un evento per sfogliare le foto</p>
       </div>
       <div class="gallery-event-grid">
-        {galleryEvents.map(ev => (
+        {events2026.map(ev => (
           <a href={`${base}/it/galleria/${ev.slug}`} class="gallery-event-card">
             <div
               class="gallery-event-cover"
@@ -41,6 +43,34 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             >
               <div class="gallery-event-overlay">
                 <span class="gallery-event-date-badge">{ev.dateLabel.slice(0, 5)}</span>
+                <div class="gallery-event-label">
+                  <h3>{ev.it.title}</h3>
+                  <p>{ev.it.place}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Esibizioni Anni Precedenti -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Esibizioni Anni Precedenti</h2>
+        <p>Fai clic su un evento per sfogliare le foto</p>
+      </div>
+      <div class="gallery-event-grid">
+        {eventsPrevious.map(ev => (
+          <a href={`${base}/it/galleria/${ev.slug}`} class="gallery-event-card">
+            <div
+              class="gallery-event-cover"
+              style={`background-image: url('${base}${ev.coverImg}')`}
+            >
+              <div class="gallery-event-overlay">
+                <span class="gallery-event-date-badge">{ev.dateLabel}</span>
                 <div class="gallery-event-label">
                   <h3>{ev.it.title}</h3>
                   <p>{ev.it.place}</p>
