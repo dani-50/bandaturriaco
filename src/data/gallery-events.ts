@@ -15,6 +15,54 @@ export type GalleryEvent = {
 };
 
 export const galleryEvents: GalleryEvent[] = [
+
+  {
+    slug: 'sfilata gorizia',
+    dateLabel: '29/08/2026',
+    coverImg: '/asset/gallery/gorizia/foto1.jpeg',
+    it: { title: '58ª Parata Folkloristica Internazionale', place: 'Gorizia' },
+    en: { title: '58th International Folklore Parade', place: 'Gorizia' },
+    de: { title: '58. Internationale Folkloreparade', place: 'Gorizia)' },
+    media: [
+      { type: 'image', src: '/asset/gallery/gorizia/foto1.jpeg'},
+      { type: 'image', src: '/asset/gallery/gorizia/foto2.jpeg'},
+      { type: 'video', src: '/asset/gallery/gorizia/video1.mp4' },
+      { type: 'video', src: '/asset/gallery/gorizia/video2.mp4' },
+  ],
+},
+
+  {
+    slug: 'villaco',
+    dateLabel: '01/08/2026',
+    coverImg: '/asset/gallery/villaco/saluto.jpeg',
+    it: { title: '81° Villacher Kirchtag', place: 'Villach (A)' },
+    en: { title: '81st Villacher Kirchtag', place: 'Villach (A)' },
+    de: { title: '81. Villacher Kirchtag', place: 'Villach (A)' },
+    media: [
+      { type: 'image', src: '/asset/gallery/villaco/foto_gruppo.jpeg'},
+      { type: 'image', src: '/asset/gallery/villaco/saluto.jpeg'},
+      { type: 'video', src: '/asset/gallery/villaco/sfilata.mp4' },
+
+  ],
+},
+
+  {
+    slug: 'sagra delle pesche',
+    dateLabel: '15/07/2026',
+    coverImg: '/asset/gallery/sagra_pesche/foto4.jpeg',
+    it: { title: 'Mostra Regionale delle Pesche e dell\'Ortofrutta Locale', place: 'Fiumicello' },
+    en: { title: 'Regional Peach and Local Produce Show', place: 'Fiumicello' },
+    de: { title: 'Regionale Pfirsich- und Gemüseschau', place: 'Fiumicello' },
+    media: [
+      { type: 'image', src: '/asset/gallery/sagra_pesche/foto1.jpeg'},
+      { type: 'image', src: '/asset/gallery/sagra_pesche/foto2.jpeg'},
+      { type: 'image', src: '/asset/gallery/sagra_pesche/foto4.jpeg'},
+      { type: 'image', src: '/asset/gallery/sagra_pesche/foto5.jpeg'},
+      { type: 'video', src: '/asset/gallery/sagra_pesche/video1.mp4' },
+
+  ],
+},
+
   {
     slug: 'concerto_beneficenza',
     dateLabel: '13/06/2026',
@@ -47,6 +95,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'video', src: '/asset/gallery/beneficenza/video7.mp4' },
     ],
   },
+
   {
     slug: 'seconda_serata',
     dateLabel: '27/05/2026',
@@ -68,6 +117,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'image', src: '/asset/gallery/seconda_serata/seconda_serata11.jpg' },
     ],
   },
+
   {
     slug: 'prima_serata',
     dateLabel: '21/05/2026',
@@ -99,6 +149,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'image', src: '/asset/gallery/liberazione/liberazione6.jpg' },
     ],
   },
+
   {
     slug: 'pasqua',
     dateLabel: '05/04/2026',
@@ -119,6 +170,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'video', src: '/asset/gallery/pasqua/pasqua10.mp4' },
     ],
   },
+
   {
     slug: 'carnevale',
     dateLabel: '08/02/2026',
@@ -130,6 +182,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'video', src: '/asset/gallery/carnevale/carnevale1.mp4', caption: 'Sfilata di Carnevale' },
     ],
   },
+
   {
     slug: 'epifania',
     dateLabel: '06/01/2026',
@@ -143,6 +196,7 @@ export const galleryEvents: GalleryEvent[] = [
       { type: 'video', src: '/asset/gallery/epifania/video concerto epifania.mp4', caption: 'Video del concerto' },
     ],
   },
+
   {
     slug: 'concorso_bertiolo',
     dateLabel: '25/05/2024',
